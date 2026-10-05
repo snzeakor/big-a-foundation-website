@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+html,body{margin:0;background:#fbf8f3;color:#161412;font-family:'Archivo',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:inherit;text-decoration:none}
+a:hover{opacity:.85}
+h1,h2,h3,p{margin:0}
+input,button{font-family:inherit}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes beat{0%,100%{transform:translate(-50%,-50%) scale(1)}15%{transform:translate(-50%,-50%) scale(1.1)}30%{transform:translate(-50%,-50%) scale(1)}45%{transform:translate(-50%,-50%) scale(1.06)}}
+@keyframes rise{from{transform:translateY(105%)}to{transform:none}}
+@keyframes spin{to{transform:rotate(360deg)}}
+</style>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#1aa58f"></rect><text x="50" y="62" font-size="34" font-weight="900" text-anchor="middle" fill="#fff" font-family="sans-serif">A</text></svg></template>
+</helmet>
+
+<header style="position:fixed;top:0;left:0;right:0;z-index:30;mix-blend-mode:normal">
+  <div style="max-width:1400px;margin:14px auto 0;padding:0 clamp(12px,3vw,32px)">
+    <div style="background:#161412;color:#fff;border-radius:18px;padding:10px 10px 10px 18px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+      <a href="#top" style="display:flex;align-items:center;gap:12px">
+        <span style="width:36px;height:36px;border-radius:10px;background:#fff;overflow:hidden;display:flex"><img src="assets/big-a-logo.jpeg" alt="Big A Foundation" style="width:100%;height:100%;object-fit:cover;object-position:50% 18%"></img></span>
+        <span style="font-weight:900;font-stretch:75%;font-size:22px;letter-spacing:.01em;text-transform:uppercase">Big A Foundation</span>
+      </a>
+      <nav style="display:flex;align-items:center;gap:clamp(10px,2vw,26px);font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:.04em;flex-wrap:wrap;justify-content:flex-end">
+        <a href="#programs">Programs</a><a href="#schools">Schools</a><a href="#events">Events</a><a href="#volunteer">Volunteer</a>
+        <a href="#donate" style="background:#ef7d16;color:#161412;padding:12px 20px;border-radius:12px;font-weight:800" style-hover="background:#fff;opacity:1">Donate</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<section id="top" style="position:relative;min-height:100vh;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));overflow:hidden">
+  <div style="background:#1aa58f;color:#fff;padding:clamp(120px,14vw,170px) clamp(20px,4vw,56px) clamp(60px,6vw,80px);display:flex;flex-direction:column;justify-content:space-between;gap:40px">
+    <span style="font-family:'JetBrains Mono';font-size:13px;letter-spacing:.1em">32.7767° N · DALLAS–FORT WORTH</span>
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <span style="overflow:hidden;display:block"><span style="display:block;font-weight:900;font-stretch:62%;font-size:clamp(120px,19vw,300px);line-height:.8;letter-spacing:-.01em;animation:rise 1s cubic-bezier(.2,.7,.2,1) both">DFW</span></span>
+      <p style="font-size:clamp(18px,1.6vw,22px);font-weight:500;line-height:1.4;max-width:420px">Programs, events and resources for families across Dallas–Fort Worth and the surrounding areas.</p>
+    </div>
+  </div>
+  <div style="background:#ef7d16;color:#161412;padding:clamp(120px,14vw,170px) clamp(20px,4vw,56px) clamp(60px,6vw,80px);display:flex;flex-direction:column;justify-content:space-between;gap:40px">
+    <span style="font-family:'JetBrains Mono';font-size:13px;letter-spacing:.1em;text-align:right">9.0820° N · NIGERIA &amp; BEYOND</span>
+    <div style="display:flex;flex-direction:column;gap:18px;align-items:flex-end;text-align:right">
+      <span style="overflow:hidden;display:block"><span style="display:block;font-weight:900;font-stretch:62%;font-size:clamp(120px,19vw,300px);line-height:.8;letter-spacing:-.01em;animation:rise 1s .15s cubic-bezier(.2,.7,.2,1) both">AFRICA</span></span>
+      <p style="font-size:clamp(18px,1.6vw,22px);font-weight:500;line-height:1.4;max-width:420px">Schools, scholarships, arts and entrepreneurs across Nigeria and Africa.</p>
+    </div>
+  </div>
+  {{ heart }}
+</section>
+
+<section style="background:#161412;color:#fff;padding:clamp(56px,7vw,90px) clamp(20px,4vw,56px)">
+  <div style="max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr));gap:clamp(32px,5vw,80px);align-items:end">
+    <h1 data-reveal="" style="font-weight:900;font-stretch:70%;font-size:clamp(56px,8vw,128px);line-height:.86;text-transform:uppercase;letter-spacing:-.005em">Community first.<br></br><span style="color:#ff5a4e">Worldwide.</span></h1>
+    <div data-reveal="" data-delay="120" style="display:flex;flex-direction:column;gap:24px">
+      <p style="font-size:clamp(18px,1.5vw,21px);line-height:1.55;color:#cfc8be">Big A Foundation shows up for DFW and reaches across the ocean, with one heart in the middle of it all.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a href="#donate" style="background:#d8352a;color:#fff;padding:18px 28px;border-radius:14px;font-weight:800;text-transform:uppercase;letter-spacing:.04em" style-hover="background:#fff;color:#161412;opacity:1">Donate now</a>
+        <a href="#events" style="border:2px solid #fff;padding:16px 26px;border-radius:14px;font-weight:800;text-transform:uppercase;letter-spacing:.04em" style-hover="background:#fff;color:#161412;opacity:1">Upcoming events</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#d8352a;color:#fff">
+  <div style="max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))">
+    <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+      <div data-reveal="" style="padding:clamp(36px,4vw,56px) clamp(20px,3vw,40px);border-right:2px solid rgba(255,255,255,.2);display:flex;flex-direction:column;gap:8px">
+        <span data-count="{{ s.n }}" data-suffix="{{ s.suf }}" style="font-weight:900;font-stretch:62%;font-size:clamp(80px,8vw,128px);line-height:.85">{{ s.label0 }}</span>
+        <span style="font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:14px">{{ s.label }}</span>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="programs" style="padding:clamp(80px,10vw,140px) 0 clamp(60px,8vw,110px)">
+  <div style="max-width:1400px;margin:0 auto;padding:0 clamp(20px,4vw,56px);display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px">
+    <h2 data-reveal="" style="font-weight:900;font-stretch:65%;font-size:clamp(64px,9vw,150px);line-height:.82;text-transform:uppercase">What<br></br>we do</h2>
+    <div style="display:flex;gap:8px">
+      <button onClick="{{ scrollPrev }}" aria-label="Previous" style="width:56px;height:56px;border-radius:14px;border:2px solid #161412;background:transparent;font-size:22px;cursor:pointer" style-hover="background:#161412;color:#fff">←</button>
+      <button onClick="{{ scrollNext }}" aria-label="Next" style="width:56px;height:56px;border-radius:14px;border:2px solid #161412;background:#161412;color:#fff;font-size:22px;cursor:pointer" style-hover="background:#d8352a;border-color:#d8352a">→</button>
+    </div>
+  </div>
+  <div ref="{{ railRef }}" style="display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 clamp(20px,4vw,56px) 20px;scrollbar-width:none">
+    <sc-for list="{{ programs }}" as="p" hint-placeholder-count="6">
+      <div style="flex:0 0 min(84vw,400px);scroll-snap-align:start;background:{{ p.bg }};color:{{ p.fg }};border-radius:28px;padding:22px;display:flex;flex-direction:column;gap:20px;min-height:520px;transition:transform .35s" style-hover="transform:translateY(-8px)">
+        <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono';font-size:12px;letter-spacing:.08em"><span>{{ p.num }}</span><span>{{ p.where }}</span></div>
+        <div style="flex:1;border-radius:18px;background:{{ p.stripe }};display:flex;align-items:flex-end;padding:14px;min-height:220px"><span style="font-family:'JetBrains Mono';font-size:11px;opacity:.85">photo: {{ p.photo }}</span></div>
+        <h3 style="font-weight:900;font-stretch:68%;font-size:46px;line-height:.9;text-transform:uppercase">{{ p.title }}</h3>
+        <p style="font-size:16px;line-height:1.5;font-weight:500">{{ p.body }}</p>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<div style="background:#161412;color:#fff;overflow:hidden;padding:18px 0;transform:rotate(-1.5deg);margin:0 -20px">{{ marquee }}</div>
+
+<section id="schools" style="padding:clamp(80px,10vw,140px) clamp(20px,4vw,56px)">
+  <div style="max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,500px),1fr));gap:16px">
+    <div data-reveal="" style="border-radius:32px;min-height:560px;background:repeating-linear-gradient(135deg,#fde0c2 0 12px,#fbd5ae 12px 24px);display:flex;align-items:flex-end;padding:22px;position:relative">
+      <span style="font-family:'JetBrains Mono';font-size:12px;color:#8a4a10">photo / video: school site</span>
+      {{ seal }}
+    </div>
+    <div data-reveal="" data-delay="120" style="border-radius:32px;background:#fff;padding:clamp(28px,4vw,56px);display:flex;flex-direction:column;justify-content:space-between;gap:32px;border:2px solid #161412">
+      <span style="font-family:'JetBrains Mono';font-size:13px;letter-spacing:.08em;color:#d8352a">SCHOOLS PROGRAM</span>
+      <h2 style="font-weight:900;font-stretch:65%;font-size:clamp(56px,7vw,112px);line-height:.84;text-transform:uppercase">Schools for Africa.</h2>
+      <p style="font-size:19px;line-height:1.55;color:#4a453f">Our first school is rising in Owerri, Nigeria. Next come more communities across Nigeria, then across the continent. Classrooms, desks, books and great teachers.</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+        <div style="background:#1aa58f;color:#fff;border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:4px"><span style="font-family:'JetBrains Mono';font-size:11px">SCHOOL 01</span><span style="font-weight:800">Owerri</span><span style="font-size:13px">Building now</span></div>
+        <div style="background:#efe9e0;border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:4px"><span style="font-family:'JetBrains Mono';font-size:11px">NEXT</span><span style="font-weight:800">More of Nigeria</span><span style="font-size:13px;color:#5b554e">Planning</span></div>
+        <div style="background:#efe9e0;border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:4px"><span style="font-family:'JetBrains Mono';font-size:11px">VISION</span><span style="font-weight:800">Across Africa</span><span style="font-size:13px;color:#5b554e">The goal</span></div>
+      </div>
+      <a href="#donate" onClick="{{ fundOwerri }}" style="background:#161412;color:#fff;padding:20px;border-radius:14px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;text-align:center" style-hover="background:#d8352a;opacity:1">Build it with us →</a>
+    </div>
+  </div>
+</section>
+
+<section id="events" style="background:#ef7d16;padding:clamp(80px,10vw,140px) clamp(20px,4vw,56px)">
+  <div style="max-width:1400px;margin:0 auto;display:flex;flex-direction:column;gap:40px">
+    <h2 data-reveal="" style="font-weight:900;font-stretch:65%;font-size:clamp(64px,9vw,150px);line-height:.82;text-transform:uppercase">Pull up</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px">
+      <sc-for list="{{ events }}" as="e" hint-placeholder-count="4">
+        <a data-reveal="" href="#volunteer" style="background:#fbf8f3;border-radius:24px;padding:24px;display:flex;flex-direction:column;gap:28px;min-height:300px;justify-content:space-between;transition:transform .3s,background .3s" style-hover="transform:translateY(-6px) rotate(-1deg);background:#161412;color:#fff;opacity:1">
+          <div style="display:flex;justify-content:space-between;align-items:start"><span style="font-weight:900;font-stretch:62%;font-size:84px;line-height:.8">{{ e.day }}</span><span style="font-family:'JetBrains Mono';font-size:12px;text-align:right;white-space:pre-line">{{ e.month }}</span></div>
+          <div style="display:flex;flex-direction:column;gap:8px"><span style="font-weight:800;font-size:24px;line-height:1.05;text-transform:uppercase;font-stretch:80%">{{ e.title }}</span><span style="font-size:15px;opacity:.8">{{ e.place }}</span></div>
+          <span style="font-weight:800;text-transform:uppercase;font-size:13px;letter-spacing:.06em">{{ e.cta }} →</span>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section style="padding:clamp(80px,10vw,140px) clamp(20px,4vw,56px)">
+  <div style="max-width:1400px;margin:0 auto;display:flex;flex-direction:column;gap:32px">
+    <h2 data-reveal="" style="font-weight:900;font-stretch:65%;font-size:clamp(64px,9vw,150px);line-height:.82;text-transform:uppercase">The moments</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));grid-auto-rows:200px;gap:10px">
+      <sc-for list="{{ gallery }}" as="g" hint-placeholder-count="8">
+        <div data-reveal="" style="border-radius:18px;grid-column:span {{ g.cols }};grid-row:span {{ g.rows }};background:{{ g.stripe }};display:flex;align-items:flex-end;padding:12px"><span style="font-family:'JetBrains Mono';font-size:11px;color:#3d3832">photo: {{ g.label }}</span></div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+
+<section id="donate" style="background:#d8352a;color:#fff;padding:clamp(80px,10vw,140px) clamp(20px,4vw,56px)">
+  <div style="max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:clamp(40px,6vw,90px);align-items:center">
+    <div data-reveal="" style="display:flex;flex-direction:column;gap:24px">
+      <h2 style="font-weight:900;font-stretch:62%;font-size:clamp(80px,12vw,200px);line-height:.8;text-transform:uppercase">Give<br></br>big.</h2>
+      <p style="font-size:20px;line-height:1.5;max-width:460px;font-weight:500">Choose your cause. Every dollar goes to work in DFW or across Africa.</p>
+    </div>
+    <div data-reveal="" data-delay="120" style="background:#161412;border-radius:28px;padding:clamp(22px,3vw,36px);display:flex;flex-direction:column;gap:20px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;background:#2a2622;border-radius:14px;padding:5px">
+        <sc-for list="{{ freqTabs }}" as="f" hint-placeholder-count="2">
+          <button onClick="{{ f.onClick }}" style="font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:14px;padding:13px;border-radius:10px;border:none;cursor:pointer;background:{{ f.bg }};color:{{ f.fg }}">{{ f.label }}</button>
+        </sc-for>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px">
+        <sc-for list="{{ funds }}" as="f" hint-placeholder-count="6">
+          <button onClick="{{ f.onClick }}" style="font-weight:600;font-size:14px;padding:10px 14px;border-radius:10px;cursor:pointer;border:2px solid {{ f.border }};background:{{ f.bg }};color:{{ f.fg }}">{{ f.label }}</button>
+        </sc-for>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px">
+        <sc-for list="{{ amounts }}" as="a" hint-placeholder-count="4">
+          <button onClick="{{ a.onClick }}" style="font-weight:900;font-stretch:70%;font-size:34px;padding:16px 4px;border-radius:14px;cursor:pointer;border:none;background:{{ a.bg }};color:{{ a.fg }};transition:all .15s">${{ a.value }}</button>
+        </sc-for>
+      </div>
+      <p style="color:#cfc8be;font-size:16px;line-height:1.45">{{ impactLine }}</p>
+      <button onClick="{{ give }}" style="font-weight:900;text-transform:uppercase;letter-spacing:.04em;font-size:18px;padding:20px;border-radius:14px;border:none;cursor:pointer;background:#ef7d16;color:#161412" style-hover="background:#fff">{{ giveLabel }}</button>
+      <sc-if value="{{ thanks }}" hint-placeholder-val="{{ false }}"><p style="text-align:center;font-weight:700;color:#4fd1b9">Thank you! Checkout connects here.</p></sc-if>
+    </div>
+  </div>
+</section>
+
+<section id="volunteer" style="padding:clamp(80px,10vw,140px) clamp(20px,4vw,56px)">
+  <div style="max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:clamp(40px,6vw,90px)">
+    <h2 data-reveal="" style="font-weight:900;font-stretch:62%;font-size:clamp(72px,10vw,170px);line-height:.8;text-transform:uppercase">Join<br></br>the <span style="color:#1aa58f">team</span>.</h2>
+    <div data-reveal="" data-delay="120" style="display:flex;flex-direction:column;gap:16px">
+      <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <input placeholder="FULL NAME" value="{{ volName }}" onChange="{{ setName }}" style="font-size:20px;font-weight:700;padding:18px 0;border:none;border-bottom:3px solid #161412;background:transparent;outline:none" style-focus="border-color:#1aa58f"></input>
+          <input placeholder="EMAIL" value="{{ volEmail }}" onChange="{{ setEmail }}" style="font-size:20px;font-weight:700;padding:18px 0;border:none;border-bottom:3px solid #161412;background:transparent;outline:none" style-focus="border-color:#1aa58f"></input>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;padding-top:8px">
+            <sc-for list="{{ interests }}" as="i" hint-placeholder-count="6">
+              <button onClick="{{ i.onClick }}" style="font-weight:700;font-size:14px;text-transform:uppercase;padding:12px 16px;border-radius:12px;cursor:pointer;border:2px solid #161412;background:{{ i.bg }};color:{{ i.fg }}">{{ i.label }}</button>
+            </sc-for>
+          </div>
+          <button onClick="{{ submitVol }}" style="margin-top:8px;font-weight:900;text-transform:uppercase;letter-spacing:.04em;font-size:18px;padding:20px;border-radius:14px;border:none;cursor:pointer;background:#1aa58f;color:#fff" style-hover="background:#161412">Count me in →</button>
+        </div>
+      </sc-if>
+      <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+        <div style="background:#1aa58f;color:#fff;border-radius:24px;padding:36px;display:flex;flex-direction:column;gap:10px"><span style="font-weight:900;font-stretch:65%;font-size:64px;text-transform:uppercase;line-height:.9">You're in.</span><p style="font-size:18px">We'll be in touch with next steps.</p></div>
+      </sc-if>
+    </div>
+  </div>
+</section>
+
+<section style="background:#161412;color:#fff;padding:clamp(70px,9vw,120px) clamp(20px,4vw,56px)">
+  <div style="max-width:1400px;margin:0 auto;display:flex;flex-direction:column;gap:32px">
+    <div style="display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap">
+      <h2 data-reveal="" style="font-weight:900;font-stretch:65%;font-size:clamp(48px,7vw,110px);line-height:.85;text-transform:uppercase">@bigafoundation</h2>
+      <a href="https://www.instagram.com/bigafoundation/" target="_blank" style="background:#fff;color:#161412;padding:16px 24px;border-radius:14px;font-weight:800;text-transform:uppercase" style-hover="background:#ef7d16;opacity:1">Follow ↗</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:8px">
+      <sc-for list="{{ insta }}" as="g" hint-placeholder-count="6">
+        <a data-reveal="" href="https://www.instagram.com/bigafoundation/" target="_blank" style="aspect-ratio:1;border-radius:14px;background:{{ g.stripe }};display:flex;align-items:flex-end;padding:10px;transition:transform .3s" style-hover="transform:scale(1.04);opacity:1"><span style="font-family:'JetBrains Mono';font-size:11px;color:#3d3832">ig post</span></a>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<footer id="contact" style="background:#161412;color:#fff;padding:0 clamp(20px,4vw,56px) 36px">
+  <div style="max-width:1400px;margin:0 auto;display:flex;flex-direction:column;gap:48px;border-top:2px solid #2f2a25;padding-top:56px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:32px">
+      <div style="display:flex;flex-direction:column;gap:8px"><span style="font-family:'JetBrains Mono';font-size:12px;color:#9b9389">CONTACT</span><a href="mailto:hello@bigafoundation.org" style="font-weight:800;font-size:22px">hello@bigafoundation.org</a></div>
+      <div style="display:flex;flex-direction:column;gap:8px"><span style="font-family:'JetBrains Mono';font-size:12px;color:#9b9389">PARTNERS</span><a href="mailto:partners@bigafoundation.org" style="font-weight:800;font-size:22px">partners@bigafoundation.org</a></div>
+      <div style="display:flex;flex-direction:column;gap:8px"><span style="font-family:'JetBrains Mono';font-size:12px;color:#9b9389">BASED IN</span><span style="font-weight:800;font-size:22px">Dallas–Fort Worth, TX</span></div>
+    </div>
+    <div style="font-weight:900;font-stretch:62%;font-size:clamp(90px,22vw,360px);line-height:.78;text-transform:uppercase;letter-spacing:-.01em;display:flex;gap:.12em;flex-wrap:wrap"><span>Big</span><span style="color:#ef7d16">A</span><span style="color:#ff5a4e">♥</span></div>
+    <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:#9b9389;font-size:14px"><span>© 2026 Big A Foundation</span><span>501(c)(3) nonprofit · EIN 00-0000000</span></div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;defaultFrequency&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Monthly&quot;,&quot;One-time&quot;],&quot;default&quot;:&quot;Monthly&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { freq: null, amt: 1, fund: 0, thanks: false, name: '', email: '', ints: [], sent: false };
+  rail = React.createRef();
+  S = (a, b) => `repeating-linear-gradient(135deg,${a} 0 12px,${b} 12px 24px)`;
+  componentDidMount() {
+    this.io = new IntersectionObserver(es => es.forEach(en => {
+      if (!en.isIntersecting) return;
+      const el = en.target; el.style.opacity = 1; el.style.transform = 'none';
+      if (el.dataset.count) this.count(el);
+      this.io.unobserve(el);
+    }), { threshold: .12 });
+    this.scan = () => document.querySelectorAll('[data-reveal]:not([data-rv]),[data-count]:not([data-rv])').forEach(el => {
+      el.dataset.rv = 1;
+      if (el.hasAttribute('data-reveal')) { const d = el.dataset.delay || 0; el.style.opacity = 0; el.style.transform = 'translateY(60px) skewY(2deg)'; el.style.transition = `opacity .9s cubic-bezier(.2,.7,.2,1) ${d}ms, transform .9s cubic-bezier(.2,.7,.2,1) ${d}ms, background .3s`; }
+      this.io.observe(el);
+    });
+    this.scan(); setTimeout(this.scan, 600);
+  }
+  componentWillUnmount() { this.io?.disconnect(); }
+  count(el) { const end = +el.dataset.count, suf = el.dataset.suffix || ''; let t0; const step = t => { t0 ??= t; const p = Math.min(1, (t - t0) / 1800); el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))).toLocaleString() + suf; if (p < 1) requestAnimationFrame(step); }; requestAnimationFrame(step); }
+  renderVals() {
+    const e = React.createElement, S = this.S;
+    const motion = this.props.motion !== false;
+    const freq = this.state.freq ?? this.props.defaultFrequency ?? 'Monthly';
+    const amts = [25, 50, 100, 250], v = amts[this.state.amt];
+    const funds = ['Most needed', 'DFW programs', 'Schools in Africa', 'Scholarships', 'Arts & culture', 'Entrepreneurs'];
+    const impact = { 25: 'buys school supplies for a student', 50: 'stocks a family resource kit', 100: 'funds desks for a new classroom', 250: 'moves a student closer to a full scholarship' };
+    const mq = ['Community', '♥', 'Scholarships', '♥', 'Arts & Culture', '♥', 'Entrepreneurs', '♥', 'Schools', '♥'];
+    const tog = (arr, x) => arr.includes(x) ? arr.filter(y => y !== x) : [...arr, x];
+    const by = d => this.rail.current?.scrollBy({ left: d * 420, behavior: 'smooth' });
+    return {
+      heart: e('div', { 'aria-hidden': true, style: { position: 'absolute', left: '50%', top: '52%', width: 'clamp(120px,14vw,200px)', height: 'clamp(120px,14vw,200px)', borderRadius: '50%', background: '#d8352a', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: 'clamp(56px,6vw,90px)', boxShadow: '0 0 0 10px #fbf8f3, 0 30px 60px -20px rgba(0,0,0,.5)', animation: motion ? 'beat 1.6s ease-in-out infinite' : 'none', transform: 'translate(-50%,-50%)', zIndex: 2 } }, '♥'),
+      seal: e('div', { 'aria-hidden': true, style: { position: 'absolute', top: 22, right: 22, width: 130, height: 130, borderRadius: '50%', background: '#161412', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'JetBrains Mono', fontSize: 11, letterSpacing: '.12em', textAlign: 'center', lineHeight: 1.5, animation: motion ? 'spin 18s linear infinite' : 'none' } }, 'SCHOOL 01', e('br'), '· OWERRI ·', e('br'), 'MORE TO COME'),
+      marquee: e('div', { style: { display: 'flex', width: 'max-content', whiteSpace: 'nowrap', animation: motion ? 'marquee 28s linear infinite' : 'none' } }, [...mq, ...mq].map((w, i) => e('span', { key: i, style: { fontWeight: 900, fontStretch: '65%', fontSize: 56, textTransform: 'uppercase', paddingRight: 36, color: w === '♥' ? '#ff5a4e' : '#fff' } }, w))),
+      stats: [{ n: 2, suf: '', label: 'Continents, one mission' }, { n: 1000, suf: '+', label: 'DFW families reached' }, { n: 50, suf: '+', label: 'Scholarships awarded' }, { n: 1, suf: '', label: 'First school rising in Owerri' }].map(s => ({ ...s, label0: s.n.toLocaleString() + s.suf })),
+      railRef: this.rail, scrollPrev: () => by(-1), scrollNext: () => by(1),
+      programs: [
+        ['01', 'DFW', 'Community Programs', 'youth program', '#1aa58f', '#fff', S('#3cb7a2', '#2fae98'), 'Mentoring, workshops and youth programs that build confidence across DFW.'],
+        ['02', 'DFW', 'Family Resources', 'resource drive', '#161412', '#fff', S('#2a2622', '#24201c'), 'Food, supplies and essentials, delivered with dignity to families who need a lift.'],
+        ['03', 'NIGERIA + AFRICA', 'Schools Across Africa', 'classroom', '#ef7d16', '#161412', S('#f39540', '#f08a2c'), 'Building schools across Nigeria and Africa, starting in Owerri.'],
+        ['04', 'GLOBAL', 'Scholarships', 'graduate', '#d8352a', '#fff', S('#e0544a', '#dc4639'), 'Opening doors to higher education for students in DFW and across Africa.'],
+        ['05', 'AFRICA', 'Arts & Culture', 'performance', '#fbf8f3', '#161412', S('#ece5da', '#e4dccf'), 'Backing artists, performers and spaces that celebrate African heritage.'],
+        ['06', 'AFRICA', 'Entrepreneurs', 'small business', '#1aa58f', '#fff', S('#3cb7a2', '#2fae98'), 'Seed funding and support for founders building what comes next.'],
+      ].map(([num, where, title, photo, bg, fg, stripe, body]) => ({ num, where, title, photo, bg, fg, stripe, body })),
+      fundOwerri: () => this.setState({ fund: 2 }),
+      events: [
+        { day: '08', month: 'NOV\n2026', title: 'Fall Community Day', place: 'Dallas, TX', cta: 'RSVP' },
+        { day: '21', month: 'NOV\n2026', title: 'Thanksgiving Giveback', place: 'Fort Worth, TX', cta: 'Volunteer' },
+        { day: '12', month: 'DEC\n2026', title: 'Schools for Africa Gala', place: 'Dallas, TX', cta: 'Get tickets' },
+        { day: '15', month: 'JAN\n2027', title: 'Scholarships Open', place: 'Online', cta: 'Learn more' },
+      ],
+      gallery: [['community day', 2, 2, S('#d3eee8', '#c7e8e0')], ['students in Nigeria', 1, 1, S('#fde0c2', '#fbd5ae')], ['giveback', 1, 1, S('#fbdcd8', '#f8cfca')], ['gala', 1, 2, S('#e6dfd5', '#ddd5c9')], ['arts showcase', 1, 1, S('#d3eee8', '#c7e8e0')], ['scholars', 1, 1, S('#fde0c2', '#fbd5ae')], ['volunteers', 2, 1, S('#fbdcd8', '#f8cfca')]].map(([label, cols, rows, stripe]) => ({ label, cols, rows, stripe })),
+      team: [['Founder Name', 'Founder & President', S('#d3eee8', '#c7e8e0')], ['Team Member', 'Programs Director, DFW', S('#fbdcd8', '#f8cfca')], ['Team Member', 'Nigeria Projects Lead', S('#fde0c2', '#fbd5ae')], ['Team Member', 'Arts & Culture Lead', S('#e6dfd5', '#ddd5c9')]].map(([name, role, stripe]) => ({ name, role, stripe })),
+      freqTabs: ['One-time', 'Monthly'].map(f => ({ label: f, bg: f === freq ? '#fff' : 'transparent', fg: f === freq ? '#161412' : '#fff', onClick: () => this.setState({ freq: f, thanks: false }) })),
+      funds: funds.map((f, i) => { const on = i === this.state.fund; return { label: f, border: on ? '#fff' : '#3a342e', bg: on ? '#fff' : 'transparent', fg: on ? '#161412' : '#fff', onClick: () => this.setState({ fund: i, thanks: false }) }; }),
+      amounts: amts.map((a, i) => { const on = i === this.state.amt; return { value: a, bg: on ? '#1aa58f' : '#2a2622', fg: '#fff', onClick: () => this.setState({ amt: i, thanks: false }) }; }),
+      impactLine: `$${v}${freq === 'Monthly' ? '/month' : ''} ${impact[v]}. To: ${funds[this.state.fund]}.`,
+      giveLabel: `Give $${v}${freq === 'Monthly' ? ' monthly' : ''} →`,
+      give: () => this.setState({ thanks: true }), thanks: this.state.thanks,
+      volName: this.state.name, volEmail: this.state.email,
+      setName: ev => this.setState({ name: ev.target.value }), setEmail: ev => this.setState({ email: ev.target.value }),
+      interests: ['Events', 'Mentoring', 'Drives', 'Schools', 'Arts', 'Fundraising'].map(x => { const on = this.state.ints.includes(x); return { label: x, bg: on ? '#161412' : 'transparent', fg: on ? '#fff' : '#161412', onClick: () => this.setState(s => ({ ints: tog(s.ints, x) })) }; }),
+      submitVol: () => this.setState({ sent: true }), sent: this.state.sent, notSent: !this.state.sent,
+      insta: [S('#d3eee8', '#c7e8e0'), S('#fde0c2', '#fbd5ae'), S('#fbdcd8', '#f8cfca'), S('#e6dfd5', '#ddd5c9'), S('#d3eee8', '#c7e8e0'), S('#fde0c2', '#fbd5ae')].map(stripe => ({ stripe })),
+    };
+  }
+}
+</script>
+</body>
+</html>

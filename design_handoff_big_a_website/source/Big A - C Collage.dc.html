@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+html,body{margin:0;background:#fff8ee;color:#161412;font-family:'Figtree',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+*{box-sizing:border-box}
+a{color:#161412;text-decoration:none}
+a:hover{color:#d8352a}
+h1,h2,h3,p{margin:0}
+input,button{font-family:inherit}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes bob{0%,100%{translate:0 0}50%{translate:0 -16px}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes wiggle{0%,100%{rotate:-4deg}50%{rotate:4deg}}
+</style>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#ef7d16"></rect><text x="50" y="62" font-size="34" font-weight="900" text-anchor="middle" fill="#161412" font-family="sans-serif">A</text></svg></template>
+</helmet>
+
+<header style="position:sticky;top:0;z-index:30;padding:14px clamp(12px,3vw,32px)">
+  <div style="max-width:1320px;margin:0 auto;background:#fff;border:2.5px solid #161412;border-radius:999px;padding:8px 8px 8px 12px;display:flex;align-items:center;justify-content:space-between;gap:14px;box-shadow:5px 5px 0 #161412">
+    <a href="#top" style="display:flex;align-items:center;gap:10px">
+      <img src="assets/big-a-logo.jpeg" alt="Big A Foundation" style="width:42px;height:42px;border-radius:50%;object-fit:cover;object-position:50% 18%"></img>
+      <span style="font-family:'Unbounded';font-weight:900;font-size:17px">BIG A</span>
+    </a>
+    <nav style="display:flex;align-items:center;gap:clamp(10px,2vw,26px);font-weight:700;font-size:15px;flex-wrap:wrap;justify-content:flex-end">
+      <a href="#programs">Programs</a><a href="#schools">Schools</a><a href="#events">Events</a><a href="#volunteer">Volunteer</a>
+      <a href="#donate" style="background:#d8352a;color:#fff;padding:12px 22px;border-radius:999px;border:2.5px solid #161412" style-hover="background:#ef7d16;color:#161412">Donate ♥</a>
+    </nav>
+  </div>
+</header>
+
+<section id="top" style="position:relative;max-width:1320px;margin:0 auto;padding:clamp(40px,6vw,80px) clamp(16px,4vw,40px) clamp(80px,9vw,120px);min-height:min(900px,92vh);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:30px">
+  {{ heroCollage }}
+  <span style="position:relative;z-index:2;font-family:'JetBrains Mono';font-size:13px;letter-spacing:.08em;background:#fff;border:2px solid #161412;border-radius:999px;padding:8px 16px;transform:rotate(-2deg)">DFW ↔ AFRICA · SINCE DAY ONE</span>
+  <h1 style="position:relative;z-index:2;font-family:'Unbounded';font-weight:900;font-size:clamp(50px,9vw,138px);line-height:.92;letter-spacing:-.04em;max-width:1050px">
+    Bigger <span style="color:#1aa58f">together</span>, <span style="display:inline-block;background:#ef7d16;padding:0 .18em;border-radius:.2em;transform:rotate(-2deg);border:4px solid #161412">louder</span> with <span style="color:#d8352a">love.</span>
+  </h1>
+  <p style="position:relative;z-index:2;font-size:clamp(18px,1.6vw,22px);line-height:1.5;max-width:620px;font-weight:500;background:rgba(255,248,238,.8);border-radius:16px;padding:4px 8px">Programs, events and resources for DFW. Schools, scholarships, arts and entrepreneurs across Africa.</p>
+  <div style="position:relative;z-index:2;display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+    <a href="#donate" style="background:#161412;color:#fff;padding:19px 32px;border-radius:999px;font-weight:700;font-size:17px;box-shadow:5px 5px 0 #d8352a;transition:transform .15s,box-shadow .15s" style-hover="transform:translate(-3px,-3px);box-shadow:8px 8px 0 #d8352a;color:#fff">Give today →</a>
+    <a href="#events" style="background:#fff;padding:17px 30px;border-radius:999px;font-weight:700;font-size:17px;border:2.5px solid #161412;box-shadow:5px 5px 0 #1aa58f;transition:transform .15s,box-shadow .15s" style-hover="transform:translate(-3px,-3px);box-shadow:8px 8px 0 #1aa58f">What's happening</a>
+  </div>
+</section>
+
+<div style="position:relative;height:clamp(160px,16vw,220px);overflow:hidden">
+  <div style="position:absolute;left:-5%;right:-5%;top:30%;background:#1aa58f;color:#fff;padding:16px 0;transform:rotate(-3deg);border-block:3px solid #161412">{{ mqA }}</div>
+  <div style="position:absolute;left:-5%;right:-5%;top:34%;background:#ef7d16;color:#161412;padding:16px 0;transform:rotate(3deg);border-block:3px solid #161412">{{ mqB }}</div>
+</div>
+
+<section style="max-width:1320px;margin:0 auto;padding:clamp(60px,8vw,100px) clamp(16px,4vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:24px;justify-items:center">
+  <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+    <div data-reveal="" style="width:min(100%,260px);aspect-ratio:1;border-radius:50%;background:{{ s.bg }};color:{{ s.fg }};border:3px solid #161412;box-shadow:6px 6px 0 #161412;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px;padding:24px;rotate:{{ s.rot }};transition:rotate .3s" style-hover="rotate:0deg">
+      <span data-count="{{ s.n }}" data-suffix="{{ s.suf }}" style="font-family:'Unbounded';font-weight:900;font-size:clamp(48px,5vw,68px);line-height:1;letter-spacing:-.04em">{{ s.label0 }}</span>
+      <span style="font-weight:700;font-size:16px;max-width:160px">{{ s.label }}</span>
+    </div>
+  </sc-for>
+</section>
+
+<section style="max-width:1320px;margin:0 auto;padding:clamp(40px,6vw,80px) clamp(16px,4vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:clamp(32px,5vw,80px);align-items:center">
+  <div data-reveal="" style="position:relative;aspect-ratio:1;max-width:520px;width:100%;justify-self:center">
+    <div style="position:absolute;inset:4% 14% 14% 4%;background:#fff;border:3px solid #161412;padding:14px 14px 50px;rotate:-5deg;box-shadow:8px 8px 0 #161412"><div style="width:100%;height:100%;background:repeating-linear-gradient(135deg,#d3eee8 0 12px,#c7e8e0 12px 24px);display:flex;align-items:flex-end;padding:10px"><span style="font-family:'JetBrains Mono';font-size:11px;color:#22665a">photo: DFW community</span></div></div>
+    <div style="position:absolute;inset:22% 0 0 26%;background:#fff;border:3px solid #161412;padding:14px 14px 50px;rotate:6deg;box-shadow:8px 8px 0 #161412"><div style="width:100%;height:100%;background:repeating-linear-gradient(135deg,#fde0c2 0 12px,#fbd5ae 12px 24px);display:flex;align-items:flex-end;padding:10px"><span style="font-family:'JetBrains Mono';font-size:11px;color:#8a4a10">photo: Nigeria</span></div></div>
+  </div>
+  <div data-reveal="" data-delay="120" style="display:flex;flex-direction:column;gap:22px">
+    <span style="font-family:'JetBrains Mono';font-size:13px;letter-spacing:.08em;color:#d8352a">OUR MISSION</span>
+    <h2 style="font-family:'Unbounded';font-weight:900;font-size:clamp(36px,4.6vw,64px);line-height:1;letter-spacing:-.035em;text-wrap:balance">Two homes. One big heart in the middle.</h2>
+    <p style="font-size:19px;line-height:1.6;color:#4a453f">At home in Dallas–Fort Worth, we run programs, events and resources that keep families strong. Abroad, we build schools in Nigeria, fund scholarships, champion arts and culture, and back African entrepreneurs.</p>
+  </div>
+</section>
+
+<section id="programs" style="max-width:1320px;margin:0 auto;padding:clamp(80px,10vw,130px) clamp(16px,4vw,40px);display:flex;flex-direction:column;gap:48px">
+  <h2 data-reveal="" style="font-family:'Unbounded';font-weight:900;font-size:clamp(44px,6.4vw,96px);line-height:.95;letter-spacing:-.045em;text-align:center">What we do</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:28px">
+    <sc-for list="{{ programs }}" as="p" hint-placeholder-count="6">
+      <div data-reveal="" style="background:{{ p.bg }};color:{{ p.fg }};border:3px solid #161412;border-radius:28px;padding:16px;display:flex;flex-direction:column;gap:16px;box-shadow:7px 7px 0 #161412;rotate:{{ p.rot }};transition:rotate .3s cubic-bezier(.3,1.6,.5,1),translate .3s" style-hover="rotate:0deg;translate:0 -6px">
+        <div style="aspect-ratio:16/10;border-radius:18px;border:2.5px solid #161412;background:{{ p.stripe }};display:flex;align-items:flex-end;padding:12px"><span style="font-family:'JetBrains Mono';font-size:11px;color:#3d3832;background:#fff;padding:4px 8px;border-radius:6px">photo: {{ p.photo }}</span></div>
+        <div style="display:flex;flex-direction:column;gap:10px;padding:4px 8px 10px">
+          <span style="font-family:'JetBrains Mono';font-size:12px;letter-spacing:.08em">{{ p.where }}</span>
+          <h3 style="font-family:'Unbounded';font-weight:900;font-size:26px;letter-spacing:-.03em;line-height:1.05">{{ p.title }}</h3>
+          <p style="font-size:16px;line-height:1.5;font-weight:500">{{ p.body }}</p>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="schools" style="padding:0 clamp(16px,4vw,40px)">
+  <div data-reveal="" style="max-width:1320px;margin:0 auto;background:#1aa58f;color:#fff;border:3px solid #161412;border-radius:44px;box-shadow:10px 10px 0 #161412;padding:clamp(32px,5vw,72px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(32px,5vw,72px);align-items:center;position:relative">
+    {{ sticker }}
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <span style="font-family:'JetBrains Mono';font-size:13px;letter-spacing:.08em;background:#fff;color:#161412;border:2px solid #161412;border-radius:999px;padding:8px 14px;align-self:flex-start;rotate:-2deg">SCHOOLS ACROSS AFRICA</span>
+      <h2 style="font-family:'Unbounded';font-weight:900;font-size:clamp(40px,5.4vw,80px);line-height:.95;letter-spacing:-.04em">Brick by brick, schools across Africa.</h2>
+      <p style="font-size:19px;line-height:1.6;color:#ecfbf8">It starts in Owerri, Imo State, where our first school is rising now. More communities across Nigeria and Africa are next.</p>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="height:26px;border-radius:999px;background:#fff;border:3px solid #161412;overflow:hidden">{{ buildBar }}</div>
+        <span style="font-weight:700">School 01 · Owerri: foundation &amp; walls</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;max-width:560px">
+        <div style="background:#161412;color:#fff;border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:4px"><span style="font-family:'JetBrains Mono';font-size:11px;color:#4fd1b9">SCHOOL 01</span><span style="font-weight:700">Owerri, Nigeria</span><span style="font-size:13px;color:#c9c2b8">Building now</span></div>
+        <div style="background:#fff;color:#161412;border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:4px"><span style="font-family:'JetBrains Mono';font-size:11px">NEXT</span><span style="font-weight:700">More of Nigeria</span><span style="font-size:13px">Planning</span></div>
+        <div style="background:#fff;color:#161412;border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:4px"><span style="font-family:'JetBrains Mono';font-size:11px">VISION</span><span style="font-weight:700">Across Africa</span><span style="font-size:13px">The goal</span></div>
+      </div>
+      <a href="#donate" onClick="{{ fundOwerri }}" style="align-self:flex-start;background:#ef7d16;color:#161412;padding:18px 30px;border-radius:999px;font-weight:800;font-size:17px;border:3px solid #161412;box-shadow:5px 5px 0 #161412" style-hover="color:#161412;background:#fff">Fund a brick →</a>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+      <div style="grid-column:span 2;aspect-ratio:16/9;border-radius:22px;border:3px solid #161412;background:repeating-linear-gradient(135deg,#43bba7 0 12px,#38b19c 12px 24px);display:flex;align-items:flex-end;padding:12px"><span style="font-family:'JetBrains Mono';font-size:11px;color:#0d4a40">photo: school site</span></div>
+      <div style="aspect-ratio:1;border-radius:22px;border:3px solid #161412;background:repeating-linear-gradient(135deg,#43bba7 0 12px,#38b19c 12px 24px);display:flex;align-items:flex-end;padding:12px;rotate:-3deg"><span style="font-family:'JetBrains Mono';font-size:11px;color:#0d4a40">photo: students</span></div>
+      <div style="aspect-ratio:1;border-radius:22px;border:3px solid #161412;background:repeating-linear-gradient(135deg,#43bba7 0 12px,#38b19c 12px 24px);display:flex;align-items:flex-end;padding:12px;rotate:3deg"><span style="font-family:'JetBrains Mono';font-size:11px;color:#0d4a40">photo: builders</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="events" style="max-width:1320px;margin:0 auto;padding:clamp(90px,11vw,150px) clamp(16px,4vw,40px);display:flex;flex-direction:column;gap:44px">
+  <h2 data-reveal="" style="font-family:'Unbounded';font-weight:900;font-size:clamp(44px,6.4vw,96px);line-height:.95;letter-spacing:-.045em;text-align:center">Save the date</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr));gap:20px">
+    <sc-for list="{{ events }}" as="e" hint-placeholder-count="4">
+      <a data-reveal="" href="#volunteer" style="display:grid;grid-template-columns:120px minmax(0,1fr);background:#fff;border:3px solid #161412;border-radius:24px;overflow:hidden;box-shadow:6px 6px 0 #161412;transition:translate .2s,box-shadow .2s" style-hover="translate:-3px -3px;box-shadow:9px 9px 0 #161412;color:#161412">
+        <div style="background:{{ e.color }};border-right:3px dashed #161412;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px;gap:2px"><span style="font-family:'Unbounded';font-weight:900;font-size:44px;line-height:1">{{ e.day }}</span><span style="font-family:'JetBrains Mono';font-size:12px">{{ e.month }}</span></div>
+        <div style="padding:22px 24px;display:flex;flex-direction:column;gap:8px;justify-content:center"><span style="font-family:'Unbounded';font-weight:700;font-size:21px;letter-spacing:-.02em;line-height:1.15">{{ e.title }}</span><span style="color:#4a453f">{{ e.place }}</span><span style="font-weight:800;font-size:14px;color:#d8352a">{{ e.cta }} →</span></div>
+      </a>
+    </sc-for>
+  </div>
+</section>
+
+<section style="background:#161412;color:#fff;padding:clamp(80px,10vw,140px) clamp(16px,4vw,40px);overflow:hidden">
+  <div style="max-width:1320px;margin:0 auto;display:flex;flex-direction:column;gap:56px">
+    <h2 data-reveal="" style="font-family:'Unbounded';font-weight:900;font-size:clamp(44px,6.4vw,96px);line-height:.95;letter-spacing:-.045em;text-align:center">The wall of <span style="color:#ef7d16">good</span></h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:28px">
+      <sc-for list="{{ gallery }}" as="g" hint-placeholder-count="8">
+        <div data-reveal="" style="background:#fff;padding:12px 12px 44px;rotate:{{ g.rot }};box-shadow:0 20px 40px -14px rgba(0,0,0,.6);transition:rotate .3s,scale .3s;position:relative" style-hover="rotate:0deg;scale:1.06">
+          <div style="aspect-ratio:1;background:{{ g.stripe }};display:flex;align-items:flex-end;padding:10px"><span style="font-family:'JetBrains Mono';font-size:11px;color:#3d3832">photo: {{ g.label }}</span></div>
+          <span style="position:absolute;top:-12px;left:50%;translate:-50% 0;width:80px;height:24px;background:{{ g.tape }};opacity:.9;rotate:-3deg"></span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+
+<section id="donate" style="padding:0 clamp(16px,4vw,40px) clamp(80px,10vw,130px)">
+  <div data-reveal="" style="max-width:1320px;margin:0 auto;background:#d8352a;color:#fff;border:3px solid #161412;border-radius:44px;box-shadow:10px 10px 0 #161412;padding:clamp(28px,5vw,72px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(32px,5vw,72px);align-items:center">
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <h2 style="font-family:'Unbounded';font-weight:900;font-size:clamp(48px,6.4vw,100px);line-height:.92;letter-spacing:-.045em">Give big. Feel bigger.</h2>
+      <p style="font-size:19px;line-height:1.55;max-width:460px">Pick a cause and an amount. We'll put it to work in DFW or across Africa.</p>
+    </div>
+    <div style="background:#fff;color:#161412;border:3px solid #161412;border-radius:30px;padding:clamp(20px,3vw,34px);display:flex;flex-direction:column;gap:18px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;border:2.5px solid #161412;border-radius:999px;overflow:hidden">
+        <sc-for list="{{ freqTabs }}" as="f" hint-placeholder-count="2">
+          <button onClick="{{ f.onClick }}" style="font-weight:800;font-size:15px;padding:13px;border:none;cursor:pointer;background:{{ f.bg }};color:{{ f.fg }}">{{ f.label }}</button>
+        </sc-for>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <sc-for list="{{ funds }}" as="f" hint-placeholder-count="6">
+          <button onClick="{{ f.onClick }}" style="font-weight:700;font-size:14px;padding:9px 14px;border-radius:999px;cursor:pointer;border:2.5px solid #161412;background:{{ f.bg }};color:#161412">{{ f.label }}</button>
+        </sc-for>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px">
+        <sc-for list="{{ amounts }}" as="a" hint-placeholder-count="4">
+          <button onClick="{{ a.onClick }}" style="font-family:'Unbounded';font-weight:900;font-size:20px;padding:18px 4px;border-radius:18px;cursor:pointer;border:2.5px solid #161412;background:{{ a.bg }};color:#161412;box-shadow:{{ a.shadow }};translate:{{ a.lift }};transition:all .15s">${{ a.value }}</button>
+        </sc-for>
+      </div>
+      <p style="font-size:16px;line-height:1.45;color:#4a453f">{{ impactLine }}</p>
+      <button onClick="{{ give }}" style="font-weight:800;font-size:18px;padding:19px;border-radius:999px;border:3px solid #161412;cursor:pointer;background:#161412;color:#fff;box-shadow:5px 5px 0 #ef7d16" style-hover="background:#1aa58f">{{ giveLabel }}</button>
+      <sc-if value="{{ thanks }}" hint-placeholder-val="{{ false }}"><p style="text-align:center;font-weight:800;color:#137a6a">♥ Thank you! Checkout connects here.</p></sc-if>
+    </div>
+  </div>
+</section>
+
+<section id="volunteer" style="max-width:1320px;margin:0 auto;padding:0 clamp(16px,4vw,40px) clamp(80px,10vw,130px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(32px,5vw,72px);align-items:center">
+  <div data-reveal="" style="display:flex;flex-direction:column;gap:20px">
+    <h2 style="font-family:'Unbounded';font-weight:900;font-size:clamp(44px,6vw,88px);line-height:.95;letter-spacing:-.045em">Got two hands? <span style="color:#1aa58f">We need 'em.</span></h2>
+    <p style="font-size:19px;line-height:1.6;color:#4a453f">Events, mentoring, drives, school building. Tell us where you want to jump in.</p>
+  </div>
+  <div data-reveal="" data-delay="120" style="background:#ef7d16;border:3px solid #161412;border-radius:32px;box-shadow:8px 8px 0 #161412;padding:clamp(22px,3vw,36px);display:flex;flex-direction:column;gap:14px;rotate:1deg">
+    <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <input placeholder="Your name" value="{{ volName }}" onChange="{{ setName }}" style="font-size:17px;font-weight:600;padding:16px 20px;border-radius:999px;border:2.5px solid #161412;background:#fff;outline:none" style-focus="box-shadow:4px 4px 0 #161412"></input>
+        <input placeholder="Email" value="{{ volEmail }}" onChange="{{ setEmail }}" style="font-size:17px;font-weight:600;padding:16px 20px;border-radius:999px;border:2.5px solid #161412;background:#fff;outline:none" style-focus="box-shadow:4px 4px 0 #161412"></input>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <sc-for list="{{ interests }}" as="i" hint-placeholder-count="6">
+            <button onClick="{{ i.onClick }}" style="font-weight:700;font-size:14px;padding:10px 16px;border-radius:999px;cursor:pointer;border:2.5px solid #161412;background:{{ i.bg }};color:{{ i.fg }}">{{ i.label }}</button>
+          </sc-for>
+        </div>
+        <button onClick="{{ submitVol }}" style="font-weight:800;font-size:18px;padding:18px;border-radius:999px;border:3px solid #161412;cursor:pointer;background:#161412;color:#fff" style-hover="background:#d8352a">Count me in →</button>
+      </div>
+    </sc-if>
+    <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;flex-direction:column;gap:8px;padding:20px 4px"><span style="font-family:'Unbounded';font-weight:900;font-size:44px;letter-spacing:-.03em">You're in! ♥</span><p style="font-size:18px;font-weight:600">We'll be in touch soon.</p></div>
+    </sc-if>
+  </div>
+</section>
+
+<section style="background:#fff;border-block:3px solid #161412;padding:clamp(70px,9vw,110px) clamp(16px,4vw,40px)">
+  <div style="max-width:1320px;margin:0 auto;display:flex;flex-direction:column;gap:32px;align-items:center">
+    <h2 data-reveal="" style="font-family:'Unbounded';font-weight:900;font-size:clamp(34px,5vw,72px);letter-spacing:-.04em">@bigafoundation</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:14px;width:100%">
+      <sc-for list="{{ insta }}" as="g" hint-placeholder-count="6">
+        <a data-reveal="" href="https://www.instagram.com/bigafoundation/" target="_blank" style="aspect-ratio:1;border-radius:22px;border:2.5px solid #161412;background:{{ g.stripe }};display:flex;align-items:flex-end;padding:10px;transition:rotate .25s" style-hover="rotate:-3deg"><span style="font-family:'JetBrains Mono';font-size:11px;color:#3d3832">ig post</span></a>
+      </sc-for>
+    </div>
+    <a href="https://www.instagram.com/bigafoundation/" target="_blank" style="background:#161412;color:#fff;padding:16px 28px;border-radius:999px;font-weight:800;box-shadow:5px 5px 0 #1aa58f" style-hover="color:#fff;background:#d8352a">Follow along ↗</a>
+  </div>
+</section>
+
+<footer id="contact" style="max-width:1320px;margin:0 auto;padding:clamp(64px,8vw,100px) clamp(16px,4vw,40px) 36px;display:flex;flex-direction:column;gap:48px">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:32px;align-items:start">
+    <img src="assets/big-a-logo.jpeg" alt="Big A Foundation" style="width:150px;mix-blend-mode:multiply"></img>
+    <div style="display:flex;flex-direction:column;gap:8px"><span style="font-family:'JetBrains Mono';font-size:12px;color:#5b554e">SAY HI</span><a href="mailto:hello@bigafoundation.org" style="font-family:'Unbounded';font-weight:700;font-size:18px">hello@bigafoundation.org</a></div>
+    <div style="display:flex;flex-direction:column;gap:8px"><span style="font-family:'JetBrains Mono';font-size:12px;color:#5b554e">PARTNER WITH US</span><a href="mailto:partners@bigafoundation.org" style="font-family:'Unbounded';font-weight:700;font-size:18px">partners@bigafoundation.org</a></div>
+    <div style="display:flex;flex-direction:column;gap:8px"><span style="font-family:'JetBrains Mono';font-size:12px;color:#5b554e">HOME BASE</span><span style="font-family:'Unbounded';font-weight:700;font-size:18px">Dallas–Fort Worth, TX</span></div>
+  </div>
+  <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:22px;border-top:2.5px solid #161412;font-size:14px;font-weight:600"><span>© 2026 Big A Foundation</span><span>501(c)(3) nonprofit · EIN 00-0000000</span></div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;defaultFrequency&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Monthly&quot;,&quot;One-time&quot;],&quot;default&quot;:&quot;Monthly&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;tilt&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:0,&quot;max&quot;:2,&quot;step&quot;:0.1,&quot;default&quot;:1,&quot;tsType&quot;:&quot;number&quot;}}">
+class Component extends DCLogic {
+  state = { freq: null, amt: 1, fund: 0, thanks: false, name: '', email: '', ints: [], sent: false, built: false };
+  S = (a, b) => `repeating-linear-gradient(135deg,${a} 0 12px,${b} 12px 24px)`;
+  componentDidMount() {
+    this.io = new IntersectionObserver(es => es.forEach(en => {
+      if (!en.isIntersecting) return;
+      const el = en.target; el.style.opacity = 1; el.style.transform = 'none';
+      if (el.dataset.count) this.count(el);
+      this.io.unobserve(el);
+    }), { threshold: .12 });
+    this.scan = () => document.querySelectorAll('[data-reveal]:not([data-rv]),[data-count]:not([data-rv])').forEach(el => {
+      el.dataset.rv = 1;
+      if (el.hasAttribute('data-reveal')) { const d = el.dataset.delay || Math.random() * 160; el.style.opacity = 0; el.style.transform = 'translateY(50px) scale(.92)'; el.style.transition = `opacity .7s ease ${d}ms, transform .8s cubic-bezier(.3,1.5,.5,1) ${d}ms, rotate .3s, translate .2s, box-shadow .2s, scale .3s`; }
+      this.io.observe(el);
+    });
+    this.scan(); setTimeout(this.scan, 600);
+    this.onScroll = () => { const y = window.scrollY; document.querySelectorAll('[data-par]').forEach(el => el.style.transform = `translateY(${y * +el.dataset.par}px)`); };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    setTimeout(() => this.setState({ built: true }), 500);
+  }
+  componentWillUnmount() { this.io?.disconnect(); window.removeEventListener('scroll', this.onScroll); }
+  count(el) { const end = +el.dataset.count, suf = el.dataset.suffix || ''; let t0; const step = t => { t0 ??= t; const p = Math.min(1, (t - t0) / 1800); el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))).toLocaleString() + suf; if (p < 1) requestAnimationFrame(step); }; requestAnimationFrame(step); }
+  renderVals() {
+    const e = React.createElement, S = this.S;
+    const motion = this.props.motion !== false;
+    const tilt = (this.props.tilt ?? 1);
+    const freq = this.state.freq ?? this.props.defaultFrequency ?? 'Monthly';
+    const amts = [25, 50, 100, 250], v = amts[this.state.amt];
+    const funds = ['Most needed', 'DFW programs', 'Schools in Africa', 'Scholarships', 'Arts & culture', 'Entrepreneurs'];
+    const impact = { 25: 'buys school supplies for a student', 50: 'stocks a family resource kit', 100: 'funds desks for a new classroom', 250: 'moves a student closer to a full scholarship' };
+    const tog = (arr, x) => arr.includes(x) ? arr.filter(y => y !== x) : [...arr, x];
+    const r = d => `${d * tilt}deg`;
+    const card = (label, stripe, pos, rot, par, dur, w) => e('div', { key: label, 'data-par': par, style: { position: 'absolute', ...pos, width: w, zIndex: 1 } },
+      e('div', { style: { background: '#fff', border: '3px solid #161412', padding: '10px 10px 34px', rotate: r(rot), boxShadow: '6px 6px 0 #161412', animation: motion ? `bob ${dur}s ease-in-out infinite` : 'none' } },
+        e('div', { style: { aspectRatio: '1', background: stripe, display: 'flex', alignItems: 'flex-end', padding: 8 } }, e('span', { style: { fontFamily: 'JetBrains Mono', fontSize: 10, color: '#3d3832' } }, 'photo: ' + label))));
+    const blob = (txt, bg, fg, pos, sz, anim) => e('div', { key: txt, style: { position: 'absolute', ...pos, width: sz, height: sz, borderRadius: '50%', background: bg, color: fg, border: '3px solid #161412', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Unbounded', fontWeight: 900, fontSize: sz / 4.4, zIndex: 1, animation: motion ? anim : 'none' } }, txt);
+    const mq = (words, dir) => e('div', { style: { display: 'flex', width: 'max-content', whiteSpace: 'nowrap', animation: motion ? `marquee 30s linear infinite ${dir}` : 'none' } }, [...words, ...words, ...words, ...words].map((w, i) => e('span', { key: i, style: { fontFamily: 'Unbounded', fontWeight: 900, fontSize: 30, paddingRight: 28 } }, w + '  ✦')));
+    return {
+      heroCollage: e('div', { 'aria-hidden': true, style: { position: 'absolute', inset: 0, pointerEvents: 'none' } },
+        card('kids at play', S('#d3eee8', '#c7e8e0'), { left: '0%', top: '6%' }, -8, -0.08, 6, 'clamp(110px,14vw,200px)'),
+        card('classroom in Nigeria', S('#fde0c2', '#fbd5ae'), { right: '1%', top: '2%' }, 7, -0.12, 7, 'clamp(120px,15vw,220px)'),
+        card('volunteers', S('#fbdcd8', '#f8cfca'), { left: '4%', bottom: '4%' }, 6, 0.06, 8, 'clamp(100px,12vw,180px)'),
+        card('artist', S('#e6dfd5', '#ddd5c9'), { right: '5%', bottom: '2%' }, -6, 0.1, 6.5, 'clamp(100px,13vw,190px)'),
+        blob('♥', '#d8352a', '#fff', { left: '18%', top: '40%' }, 74, 'wiggle 2.4s ease-in-out infinite'),
+        blob('DFW', '#1aa58f', '#fff', { right: '17%', top: '44%' }, 96, 'spin 20s linear infinite')),
+      mqA: mq(['Community', 'Scholarships', 'Arts & Culture', 'DFW'], 'normal'),
+      mqB: mq(['Nigeria', 'Entrepreneurs', 'Schools', 'Africa'], 'reverse'),
+      sticker: e('div', { 'aria-hidden': true, style: { position: 'absolute', top: -34, right: 40, width: 108, height: 108, borderRadius: '50%', background: '#ef7d16', color: '#161412', border: '3px solid #161412', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', fontFamily: 'Unbounded', fontWeight: 900, fontSize: 13, lineHeight: 1.1, animation: motion ? 'wiggle 3s ease-in-out infinite' : 'none' } }, 'NOW', e('br'), 'BUILDING!'),
+      buildBar: e('div', { style: { height: '100%', width: this.state.built ? '35%' : '0%', background: 'repeating-linear-gradient(45deg,#d8352a 0 12px,#ef7d16 12px 24px)', borderRight: '3px solid #161412', transition: 'width 2.4s cubic-bezier(.2,.7,.2,1)' } }),
+      fundOwerri: () => this.setState({ fund: 2 }),
+      stats: [[2, '', 'continents, one mission', '#1aa58f', '#fff', -6], [1000, '+', 'DFW families reached', '#ef7d16', '#161412', 4], [50, '+', 'scholarships awarded', '#d8352a', '#fff', -3], [1, '', 'first school rising in Owerri', '#fff', '#161412', 6]].map(([n, suf, label, bg, fg, rot]) => ({ n, suf, label, bg, fg, rot: r(rot), label0: n.toLocaleString() + suf })),
+      programs: [
+        ['DFW', 'Community Programs', 'youth program', '#fff', '#161412', S('#d3eee8', '#c7e8e0'), -2, 'Mentoring, workshops and youth programs that build confidence across DFW.'],
+        ['DFW', 'Family Resources', 'resource drive', '#1aa58f', '#fff', S('#d3eee8', '#c7e8e0'), 1.5, 'Food, supplies and essentials, delivered with dignity.'],
+        ['NIGERIA + AFRICA', 'Schools Across Africa', 'classroom', '#fff', '#161412', S('#fde0c2', '#fbd5ae'), -1, 'Building schools across Nigeria and Africa, starting in Owerri.'],
+        ['GLOBAL', 'Scholarships', 'graduate', '#ef7d16', '#161412', S('#fff1e2', '#fde6cc'), 2, 'Higher education doors, opened for students in DFW and Africa.'],
+        ['AFRICA', 'Arts & Culture', 'performance', '#d8352a', '#fff', S('#fbdcd8', '#f8cfca'), -1.5, 'Backing artists and spaces that celebrate African heritage.'],
+        ['AFRICA', 'Entrepreneurs', 'small business', '#fff', '#161412', S('#e6dfd5', '#ddd5c9'), 1, 'Seed funding and support for founders building what comes next.'],
+      ].map(([where, title, photo, bg, fg, stripe, rot, body]) => ({ where, title, photo, bg, fg, stripe, rot: r(rot), body })),
+      events: [
+        { day: '08', month: 'NOV', title: 'Fall Community Day', place: 'Dallas, TX · food, music, resources', cta: 'RSVP', color: '#1aa58f' },
+        { day: '21', month: 'NOV', title: 'Thanksgiving Giveback Drive', place: 'Fort Worth, TX · volunteers needed', cta: 'Volunteer', color: '#ef7d16' },
+        { day: '12', month: 'DEC', title: 'Schools for Africa: Benefit Gala', place: 'Dallas, TX · tickets & tables', cta: 'Get tickets', color: '#ff7b70' },
+        { day: '15', month: 'JAN', title: 'Scholarship Applications Open', place: 'Online · DFW & Nigeria', cta: 'Learn more', color: '#fff8ee' },
+      ],
+      gallery: [['community day', -4, '#1aa58f'], ['students in Nigeria', 3, '#ef7d16'], ['giveback', -2, '#d8352a'], ['gala', 5, '#1aa58f'], ['arts night', 2, '#ef7d16'], ['scholars', -5, '#d8352a'], ['volunteers', 4, '#1aa58f'], ['family day', -3, '#ef7d16']].map(([label, rot, tape], i) => ({ label, rot: r(rot), tape, stripe: [S('#d3eee8', '#c7e8e0'), S('#fde0c2', '#fbd5ae'), S('#fbdcd8', '#f8cfca'), S('#e6dfd5', '#ddd5c9')][i % 4] })),
+      team: [['Founder Name', 'Founder & President', '#d8352a', S('#d3eee8', '#c7e8e0')], ['Team Member', 'Programs Director, DFW', '#1aa58f', S('#fbdcd8', '#f8cfca')], ['Team Member', 'Nigeria Projects Lead', '#ef7d16', S('#fde0c2', '#fbd5ae')], ['Team Member', 'Arts & Culture Lead', '#d8352a', S('#e6dfd5', '#ddd5c9')]].map(([name, role, shadow, stripe]) => ({ name, role, shadow, stripe })),
+      freqTabs: ['One-time', 'Monthly'].map(f => ({ label: f, bg: f === freq ? '#161412' : '#fff', fg: f === freq ? '#fff' : '#161412', onClick: () => this.setState({ freq: f, thanks: false }) })),
+      funds: funds.map((f, i) => ({ label: f, bg: i === this.state.fund ? '#ef7d16' : '#fff', onClick: () => this.setState({ fund: i, thanks: false }) })),
+      amounts: amts.map((a, i) => { const on = i === this.state.amt; return { value: a, bg: on ? '#1aa58f' : '#fff', shadow: on ? '4px 4px 0 #161412' : 'none', lift: on ? '-2px -2px' : '0 0', onClick: () => this.setState({ amt: i, thanks: false }) }; }),
+      impactLine: `$${v}${freq === 'Monthly' ? '/month' : ''} ${impact[v]}. Going to: ${funds[this.state.fund]}.`,
+      giveLabel: `Give $${v}${freq === 'Monthly' ? ' monthly' : ''} →`,
+      give: () => this.setState({ thanks: true }), thanks: this.state.thanks,
+      volName: this.state.name, volEmail: this.state.email,
+      setName: ev => this.setState({ name: ev.target.value }), setEmail: ev => this.setState({ email: ev.target.value }),
+      interests: ['Events', 'Mentoring', 'Drives', 'School building', 'Arts', 'Fundraising'].map(x => { const on = this.state.ints.includes(x); return { label: x, bg: on ? '#161412' : '#fff', fg: on ? '#fff' : '#161412', onClick: () => this.setState(s => ({ ints: tog(s.ints, x) })) }; }),
+      submitVol: () => this.setState({ sent: true }), sent: this.state.sent, notSent: !this.state.sent,
+      insta: [S('#d3eee8', '#c7e8e0'), S('#fde0c2', '#fbd5ae'), S('#fbdcd8', '#f8cfca'), S('#e6dfd5', '#ddd5c9'), S('#d3eee8', '#c7e8e0'), S('#fde0c2', '#fbd5ae')].map(stripe => ({ stripe })),
+    };
+  }
+}
+</script>
+</body>
+</html>
