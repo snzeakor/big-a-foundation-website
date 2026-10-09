@@ -1,0 +1,758 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Big A Foundation — DFW ↔ Nigeria &amp; Africa</title>
+<meta name="description" content="Big A Foundation runs programs, events and resources in Dallas–Fort Worth, and builds schools, scholarships, arts and entrepreneurship across Nigeria and Africa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#1aa58f; --teal-deep:#137a6a; --teal-light:#4fd1b9; --teal-tint:#e3f4f0; --teal-tint2:#d3eee8;
+  --red:#d8352a; --red-deep:#b8271d; --red-bright:#ff5a4e; --red-tint:#fde7e4; --red-tint2:#fbdcd8;
+  --orange:#ef7d16; --orange-deep:#b85a08; --orange-tint:#feeedc; --orange-tint2:#fde0c2;
+  --ink:#161412; --muted:#4a453f; --muted2:#5b554e; --ondark-muted:#c9c2b8; --ondark-muted2:#9b9389;
+  --cream:#fbf8f3; --cream-alt:#f2ede5; --neutral-tint:#e6dfd5; --input-border:#e2dbd0;
+  --display:'Bricolage Grotesque',sans-serif; --body:'Figtree',sans-serif; --mono:'JetBrains Mono',monospace;
+  --max:1320px; --pad:clamp(16px,4vw,40px); --sec:clamp(80px,10vw,140px);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0; background:var(--cream); color:var(--ink); font-family:var(--body);
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+img{display:block; max-width:100%;}
+a{color:inherit;}
+.wrap{max-width:var(--max); margin:0 auto; padding-left:var(--pad); padding-right:var(--pad);}
+.eyebrow{font-family:var(--mono); font-size:12px; letter-spacing:.08em; text-transform:uppercase;}
+h1,h2,h3{font-family:var(--display); margin:0; letter-spacing:-0.02em;}
+h2{font-size:clamp(44px,6vw,88px); line-height:.92; letter-spacing:-0.045em; font-weight:700;}
+p{line-height:1.6; margin:0;}
+.btn{
+  display:inline-flex; align-items:center; gap:8px; font-family:var(--body); font-weight:700;
+  font-size:15px; padding:16px 28px; border-radius:999px; border:none; cursor:pointer;
+  text-decoration:none; transition:transform .2s ease, box-shadow .2s ease;
+}
+.btn:hover{ transform:translateY(-2px); }
+.btn-primary{ background:var(--red); color:#fff; box-shadow:0 20px 40px -20px rgba(216,53,42,.5); }
+.btn-dark{ background:var(--ink); color:#fff; }
+.btn-outline{ background:transparent; color:var(--ink); border:2px solid var(--ink); }
+
+/* reveal */
+[data-reveal]{ opacity:0; transform:translateY(48px); transition:opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1); }
+[data-reveal].in{ opacity:1; transform:translateY(0); }
+@media (prefers-reduced-motion:reduce){
+  [data-reveal]{ opacity:1; transform:none; transition:none; }
+}
+
+/* ===== header ===== */
+header{
+  position:sticky; top:0; z-index:50; background:rgba(251,248,243,.88); backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--input-border);
+}
+.nav{ position:relative; display:flex; align-items:center; justify-content:space-between; padding:16px var(--pad); max-width:var(--max); margin:0 auto; }
+.brand{ display:flex; align-items:center; gap:10px; text-decoration:none; }
+.brand img{ width:38px; height:38px; border-radius:10px; mix-blend-mode:multiply; }
+.brand span{ font-family:var(--display); font-weight:800; font-size:18px; color:var(--ink); }
+.nav-links{ display:flex; align-items:center; gap:32px; list-style:none; margin:0; padding:0; }
+.nav-links a{ text-decoration:none; font-weight:600; font-size:15px; color:var(--muted); }
+.nav-links a:hover{ color:var(--ink); }
+.nav-donate{ background:var(--red); color:#fff; font-weight:700; padding:11px 22px; border-radius:999px; text-decoration:none; font-size:14px; }
+.nav-toggle{ display:none; background:none; border:none; cursor:pointer; padding:6px; }
+.nav-toggle span{ display:block; width:22px; height:2px; background:var(--ink); margin:5px 0; }
+@media (max-width:860px){
+  .nav-links{
+    display:none; position:absolute; top:100%; left:0; right:0; flex-direction:column;
+    gap:0; background:var(--cream); border-bottom:1px solid var(--input-border); padding:8px var(--pad) 16px;
+  }
+  .nav-links.open{ display:flex; }
+  .nav-links li{ width:100%; }
+  .nav-links a{ display:block; padding:12px 0; border-bottom:1px solid var(--input-border); }
+  .nav-toggle{ display:block; }
+}
+
+/* ===== hero ===== */
+.hero{ position:relative; padding:64px 0 var(--sec); overflow:hidden; }
+.blob{ position:absolute; border-radius:50%; filter:blur(70px); opacity:.35; z-index:0; pointer-events:none; }
+.blob1{ width:420px; height:420px; background:var(--teal-light); top:-120px; right:-80px; animation:drift1 18s ease-in-out infinite; }
+.blob2{ width:360px; height:360px; background:var(--orange); bottom:40px; left:-100px; animation:drift2 22s ease-in-out infinite; }
+.blob3{ width:300px; height:300px; background:var(--red-bright); top:40%; right:30%; animation:drift3 16s ease-in-out infinite; }
+@keyframes drift1{ 0%,100%{transform:translate(0,0);} 50%{transform:translate(-40px,50px);} }
+@keyframes drift2{ 0%,100%{transform:translate(0,0);} 50%{transform:translate(50px,-30px);} }
+@keyframes drift3{ 0%,100%{transform:translate(0,0);} 50%{transform:translate(-30px,-40px);} }
+@media (prefers-reduced-motion:reduce){ .blob{animation:none;} }
+.hero-grid{ position:relative; z-index:1; display:grid; grid-template-columns:1.1fr 1fr; gap:48px; align-items:center; }
+@media (max-width:980px){ .hero-grid{ grid-template-columns:1fr; } }
+.hero-eyebrow{ display:flex; align-items:center; gap:8px; color:var(--teal-deep); margin-bottom:20px; }
+.hero-eyebrow .dot{ width:7px; height:7px; border-radius:50%; background:var(--teal); }
+.hero h1{ font-size:clamp(56px,8.6vw,128px); line-height:.88; letter-spacing:-0.05em; font-weight:800; }
+.hero h1 .red{ color:var(--red); }
+.hero-sub{ margin-top:28px; }
+.hero-sub .rotator-row{ display:flex; align-items:baseline; gap:10px; font-size:clamp(22px,2.6vw,30px); font-weight:700; font-family:var(--display); flex-wrap:wrap; }
+.rotator{ position:relative; display:inline-block; min-width:160px; }
+.rotator-word{ display:inline-block; border-bottom:5px solid var(--teal); padding-bottom:2px; transition:opacity .6s ease, transform .6s ease, filter .6s ease; }
+.rotator-word.leaving{ opacity:0; transform:translateY(-10px); filter:blur(6px); }
+.hero p.lead{ margin-top:24px; max-width:460px; font-size:19px; color:var(--muted); line-height:1.6; }
+.hero-ctas{ margin-top:36px; display:flex; gap:14px; flex-wrap:wrap; }
+.hero-photos{ position:relative; min-height:420px; }
+.hero-photo{ position:absolute; border-radius:32px; overflow:hidden; box-shadow:0 30px 60px -30px rgba(22,20,18,.35); }
+.hero-photo img{ width:100%; height:100%; object-fit:cover; }
+.hero-photo-1{ width:72%; aspect-ratio:1/1.05; left:0; top:0; background:var(--teal-tint2); }
+.hero-photo-2{ width:54%; aspect-ratio:1/1.15; right:0; bottom:-40px; background:var(--orange-tint2); }
+.ph{ width:100%; height:100%; display:flex; align-items:flex-end; padding:20px; background-image:repeating-linear-gradient(135deg, var(--stripe1,#e3f4f0), var(--stripe1,#e3f4f0) 12px, var(--stripe2,#d3eee8) 12px, var(--stripe2,#d3eee8) 24px); }
+.ph span{ font-family:var(--mono); font-size:11px; color:var(--teal-deep); }
+.float-badge{ position:absolute; left:-10px; bottom:60px; background:#fff; border-radius:999px; padding:12px 18px; display:flex; align-items:center; gap:8px; box-shadow:0 20px 40px -20px rgba(22,20,18,.35); font-weight:700; font-size:14px; animation:bob 6s ease-in-out infinite; z-index:2; }
+@keyframes bob{ 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
+.float-badge .heart{ color:var(--red); animation:pulse 1.4s ease-in-out infinite; }
+@keyframes pulse{ 0%,100%{transform:scale(1);} 50%{transform:scale(1.25);} }
+@media (prefers-reduced-motion:reduce){ .float-badge, .float-badge .heart{ animation:none; } }
+
+/* ===== marquee ===== */
+.marquee-wrap{ background:var(--ink); color:#fff; padding:22px 0; overflow:hidden; white-space:nowrap; }
+.marquee{ display:inline-flex; animation:marquee 34s linear infinite; }
+.marquee span{ font-family:var(--display); font-weight:700; font-size:22px; padding:0 28px; opacity:.9; }
+.marquee span.dot{ color:var(--orange); }
+@keyframes marquee{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+@media (prefers-reduced-motion:reduce){ .marquee{animation:none;} }
+
+/* ===== stats ===== */
+.stats{ padding:var(--sec) 0; }
+.stats-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr)); gap:32px; text-align:center; }
+.stat-num{ font-family:var(--display); font-weight:800; font-size:clamp(40px,5vw,64px); color:var(--teal-deep); letter-spacing:-0.03em; }
+.stat-label{ margin-top:8px; font-size:15px; color:var(--muted); font-weight:600; }
+
+/* ===== mission ===== */
+.mission{ padding:0 0 var(--sec); }
+.mission-grid{ display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+@media (max-width:860px){ .mission-grid{ grid-template-columns:1fr; } }
+.mission-card{ border-radius:32px; padding:44px; min-height:320px; display:flex; flex-direction:column; justify-content:flex-end; }
+.mission-card.dfw{ background:var(--teal-tint2); }
+.mission-card.africa{ background:var(--orange-tint2); }
+.mission-card .eyebrow{ color:var(--teal-deep); margin-bottom:14px; }
+.mission-card.africa .eyebrow{ color:var(--orange-deep); }
+.mission-card h3{ font-size:clamp(26px,3vw,36px); font-weight:800; margin-bottom:10px; }
+.mission-card p{ color:var(--muted2); font-size:17px; max-width:440px; }
+
+/* ===== programs ===== */
+.section{ padding:var(--sec) 0; }
+.section-head{ max-width:640px; margin-bottom:56px; }
+.section-head .eyebrow{ color:var(--teal-deep); margin-bottom:14px; }
+.programs-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr)); gap:28px; }
+.card{ background:#fff; border-radius:28px; overflow:hidden; box-shadow:0 20px 50px -35px rgba(22,20,18,.25); transition:transform .3s ease, box-shadow .3s ease; }
+.card:hover{ transform:translateY(-8px) rotate(-0.6deg); box-shadow:0 30px 60px -30px rgba(22,20,18,.35); }
+.card-photo{ aspect-ratio:4/3; width:100%; }
+.card-photo img{ width:100%; height:100%; object-fit:cover; }
+.card-body{ padding:26px; }
+.card-tag{ font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; font-weight:500; }
+.card h3{ font-size:22px; margin-top:10px; font-weight:700; }
+.card p{ margin-top:10px; color:var(--muted2); font-size:15px; }
+
+/* ===== schools ===== */
+.schools{ background:var(--cream-alt); padding:var(--sec) 0; }
+.schools-grid{ display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; }
+@media (max-width:900px){ .schools-grid{ grid-template-columns:1fr; } }
+.roadmap{ display:flex; flex-direction:column; gap:0; margin-top:28px; }
+.road-step{ display:flex; gap:16px; padding:14px 0; border-left:2px solid var(--input-border); padding-left:20px; position:relative; }
+.road-step::before{ content:''; position:absolute; left:-7px; top:20px; width:12px; height:12px; border-radius:50%; background:var(--input-border); }
+.road-step.active::before{ background:var(--teal); }
+.road-step .step-label{ font-weight:700; }
+.road-step .step-sub{ color:var(--muted); font-size:14px; }
+.progress-wrap{ margin-top:28px; background:var(--neutral-tint); border-radius:999px; height:14px; overflow:hidden; }
+.progress-bar{ height:100%; width:0; background:var(--teal); border-radius:999px; transition:width 2.4s cubic-bezier(.2,.7,.2,1); }
+.progress-bar.go{ width:35%; }
+.progress-label{ margin-top:10px; font-size:14px; color:var(--muted); font-weight:600; }
+.schools-photo{ border-radius:32px; overflow:hidden; aspect-ratio:1/1; box-shadow:0 30px 60px -30px rgba(22,20,18,.35); }
+
+/* ===== events ===== */
+.events-list{ display:flex; flex-direction:column; border-top:1px solid var(--input-border); }
+.event-row{ display:flex; align-items:center; gap:28px; padding:26px 20px; border-bottom:1px solid var(--input-border); text-decoration:none; color:inherit; transition:transform .3s ease, background .3s ease, color .3s ease; border-radius:16px; }
+.event-row:hover{ transform:translateX(14px); background:var(--event-color,var(--teal)); color:#fff; }
+.event-row:hover .event-place{ color:rgba(255,255,255,.8); }
+.event-date{ font-family:var(--display); font-weight:800; font-size:28px; min-width:110px; }
+.event-date .m{ display:block; font-family:var(--mono); font-size:11px; font-weight:500; letter-spacing:.06em; text-transform:uppercase; margin-top:4px; }
+.event-title{ font-weight:700; font-size:19px; }
+.event-place{ color:var(--muted); font-size:14px; margin-top:4px; }
+.event-cta{ margin-left:auto; font-weight:700; font-size:14px; white-space:nowrap; }
+
+/* ===== gallery ===== */
+.gallery-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr)); gap:18px; }
+.gallery-grid img, .gallery-grid .ph{ border-radius:20px; aspect-ratio:1/1; object-fit:cover; width:100%; height:100%; }
+.gallery-item{ border-radius:20px; overflow:hidden; aspect-ratio:1/1; }
+.gallery-item.tall{ aspect-ratio:1/1.6; grid-row:span 2; }
+
+/* ===== donate ===== */
+.donate{ background:var(--ink); color:#fff; padding:var(--sec) 0; }
+.donate .eyebrow{ color:var(--teal-light); }
+.donate h2{ color:#fff; }
+.donate-grid{ display:grid; grid-template-columns:1fr 1fr; gap:56px; margin-top:40px; align-items:start; }
+@media (max-width:900px){ .donate-grid{ grid-template-columns:1fr; } }
+.donate-lead p{ color:var(--ondark-muted); font-size:18px; max-width:420px; }
+.donate-card{ background:#fff; color:var(--ink); border-radius:28px; padding:32px; }
+.toggle-row{ display:flex; background:var(--neutral-tint); border-radius:999px; padding:4px; }
+.toggle-row button{ flex:1; border:none; background:transparent; padding:12px; border-radius:999px; font-weight:700; font-family:var(--body); cursor:pointer; font-size:14px; }
+.toggle-row button.on{ background:#fff; box-shadow:0 2px 8px rgba(0,0,0,.1); }
+.field-label{ font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin:22px 0 10px; }
+.chip-row{ display:flex; flex-wrap:wrap; gap:10px; }
+.chip{ border:2px solid var(--input-border); background:#fff; color:var(--ink); border-radius:999px; padding:9px 16px; font-weight:600; font-size:13px; cursor:pointer; font-family:var(--body); }
+.chip.on{ background:var(--ink); border-color:var(--ink); color:#fff; }
+.amt-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+.amt-grid button{ border:2px solid var(--input-border); background:#fff; border-radius:14px; padding:14px; font-weight:700; font-family:var(--display); font-size:17px; cursor:pointer; }
+.amt-grid button.on{ background:var(--red); border-color:var(--red); color:#fff; }
+.impact-line{ margin-top:22px; font-size:15px; color:var(--muted2); background:var(--cream-alt); border-radius:14px; padding:14px 16px; line-height:1.5; }
+.give-btn{ width:100%; margin-top:20px; justify-content:center; font-size:16px; padding:18px; }
+.thanks-msg{ margin-top:20px; background:var(--teal-tint2); color:var(--teal-deep); border-radius:14px; padding:16px; font-weight:600; text-align:center; }
+
+/* ===== volunteer ===== */
+.volunteer-card{ max-width:640px; background:#fff; border-radius:28px; padding:40px; box-shadow:0 20px 50px -35px rgba(22,20,18,.25); }
+.form-row{ margin-bottom:18px; }
+.form-row label{ display:block; font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin-bottom:8px; }
+.form-row input{ width:100%; border:2px solid var(--input-border); border-radius:14px; padding:14px 16px; font-family:var(--body); font-size:15px; }
+.form-row input:focus{ outline:none; border-color:var(--teal); }
+.success-box{ background:var(--teal-tint2); color:var(--teal-deep); border-radius:16px; padding:24px; font-weight:600; }
+
+/* ===== instagram ===== */
+.insta-head{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; margin-bottom:28px; }
+.insta-grid{ display:grid; grid-template-columns:repeat(6,1fr); gap:10px; }
+@media (max-width:760px){ .insta-grid{ grid-template-columns:repeat(3,1fr); } }
+.insta-grid a{ display:block; aspect-ratio:1/1; border-radius:14px; overflow:hidden; }
+.insta-grid img{ width:100%; height:100%; object-fit:cover; transition:transform .4s ease; }
+.insta-grid a:hover img{ transform:scale(1.08); }
+
+/* ===== footer ===== */
+footer{ background:var(--ink); color:var(--ondark-muted); padding:72px 0 40px; }
+.footer-top{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:40px; padding-bottom:48px; border-bottom:1px solid rgba(255,255,255,.1); }
+.footer-brand{ display:flex; align-items:center; gap:12px; }
+.footer-brand img{ width:44px; height:44px; border-radius:12px; }
+.footer-brand span{ font-family:var(--display); font-weight:800; font-size:20px; color:#fff; }
+.footer-links{ display:flex; gap:56px; flex-wrap:wrap; }
+.footer-col h4{ font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--ondark-muted2); margin-bottom:14px; font-weight:500; }
+.footer-col a, .footer-col div{ display:block; color:var(--ondark-muted); text-decoration:none; font-size:15px; margin-bottom:8px; }
+.footer-col a:hover{ color:#fff; }
+.footer-bottom{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:16px; padding-top:28px; font-size:13px; }
+.wordmark{ font-family:var(--display); font-weight:800; font-size:clamp(48px,10vw,160px); letter-spacing:-0.04em; color:rgba(255,255,255,.06); margin-top:40px; line-height:1; white-space:nowrap; overflow:hidden; }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a class="brand" href="#top">
+      <img src="assets/big-a-logo.jpeg" alt="Big A Foundation">
+      <span>Big A Foundation</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#programs">Programs</a></li>
+      <li><a href="#schools">Schools</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#volunteer">Volunteer</a></li>
+    </ul>
+    <a class="nav-donate" href="#donate">Give today</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<section class="hero" id="top">
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-eyebrow eyebrow"><span class="dot"></span> DALLAS–FORT WORTH · NIGERIA &amp; AFRICA</div>
+      <h1>Big hearts.<br><span class="red">Bigger impact.</span></h1>
+      <div class="hero-sub">
+        <div class="rotator-row">
+          Showing up in
+          <span class="rotator"><span class="rotator-word" id="rotator-word">DFW</span></span>
+        </div>
+      </div>
+      <p class="lead">Programs, events and resources for DFW families. Schools, scholarships, arts and new businesses across Africa. One foundation, two homes, zero hesitation.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#donate">Give today →</a>
+        <a class="btn btn-outline" href="#events">See events</a>
+      </div>
+    </div>
+    <div class="hero-photos">
+      <div class="hero-photo hero-photo-1" data-parallax="-0.06">
+        <img src="assets/photos/hero-dfw.jpg" alt="Big A Foundation Christmas party, Dallas–Fort Worth">
+      </div>
+      <div class="hero-photo hero-photo-2" data-parallax="0.08">
+        <div class="ph" style="--stripe1:var(--orange-tint);--stripe2:var(--orange-tint2);"><span>photo: students in Nigeria</span></div>
+      </div>
+      <div class="float-badge"><span class="heart">♥</span> DFW ↔ Africa, one family</div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee-wrap">
+  <div class="marquee" id="marquee">
+    <span>Community <span class="dot">•</span></span><span>Scholarships <span class="dot">•</span></span><span>Schools <span class="dot">•</span></span><span>Arts &amp; Culture <span class="dot">•</span></span><span>Entrepreneurs <span class="dot">•</span></span><span>DFW <span class="dot">•</span></span><span>Nigeria <span class="dot">•</span></span><span>Africa <span class="dot">•</span></span>
+    <span>Community <span class="dot">•</span></span><span>Scholarships <span class="dot">•</span></span><span>Schools <span class="dot">•</span></span><span>Arts &amp; Culture <span class="dot">•</span></span><span>Entrepreneurs <span class="dot">•</span></span><span>DFW <span class="dot">•</span></span><span>Nigeria <span class="dot">•</span></span><span>Africa <span class="dot">•</span></span>
+  </div>
+</div>
+
+<section class="stats wrap">
+  <div class="stats-grid">
+    <div data-reveal data-delay="0">
+      <div class="stat-num" data-count="2">0</div>
+      <div class="stat-label">Continents</div>
+    </div>
+    <div data-reveal data-delay="80">
+      <div class="stat-num"><span data-count="1000">0</span>+</div>
+      <div class="stat-label">DFW families served</div>
+    </div>
+    <div data-reveal data-delay="160">
+      <div class="stat-num"><span data-count="50">0</span>+</div>
+      <div class="stat-label">Scholarships awarded</div>
+    </div>
+    <div data-reveal data-delay="240">
+      <div class="stat-num">01</div>
+      <div class="stat-label">First school rising — Owerri, Nigeria</div>
+    </div>
+  </div>
+</section>
+
+<section class="mission wrap">
+  <div class="mission-grid">
+    <div class="mission-card dfw" data-reveal>
+      <div class="eyebrow">DALLAS–FORT WORTH</div>
+      <h3>Showing up for our block.</h3>
+      <p>Community programs, family resources, mentoring and events for DFW families — built with the neighborhoods we serve, not just for them.</p>
+    </div>
+    <div class="mission-card africa" data-reveal data-delay="120">
+      <div class="eyebrow">NIGERIA &amp; AFRICA</div>
+      <h3>Building our second home.</h3>
+      <p>Schools, scholarships, arts and culture, and entrepreneurs — starting with our first school rising in Owerri, Imo State.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap" id="programs">
+  <div class="section-head" data-reveal>
+    <div class="eyebrow">WHAT WE DO</div>
+    <h2>Six ways we show up.</h2>
+  </div>
+  <div class="programs-grid">
+    <div class="card" data-reveal data-delay="0">
+      <div class="card-photo"><img src="assets/photos/program-community.jpg" alt="Community program, Dallas–Fort Worth"></div>
+      <div class="card-body">
+        <div class="card-tag" style="color:var(--teal-deep)">DFW</div>
+        <h3>Community Programs</h3>
+        <p>Mentoring, workshops and youth programs that build confidence and connection across DFW.</p>
+      </div>
+    </div>
+    <div class="card" data-reveal data-delay="60">
+      <div class="card-photo"><img src="assets/photos/program-family.jpg" alt="Family resource drive, Dallas–Fort Worth"></div>
+      <div class="card-body">
+        <div class="card-tag" style="color:var(--red-deep)">DFW</div>
+        <h3>Family Resources</h3>
+        <p>Food, school supplies and essentials, delivered with dignity to families who need a lift.</p>
+      </div>
+    </div>
+    <div class="card" data-reveal data-delay="120">
+      <div class="card-photo"><div class="ph" style="--stripe1:var(--orange-tint);--stripe2:var(--orange-tint2);"><span>photo: classroom</span></div></div>
+      <div class="card-body">
+        <div class="card-tag" style="color:var(--orange-deep)">NIGERIA + AFRICA</div>
+        <h3>Schools Across Africa</h3>
+        <p>Building schools across Nigeria and Africa, starting with our first in Owerri.</p>
+      </div>
+    </div>
+    <div class="card" data-reveal data-delay="0">
+      <div class="card-photo"><div class="ph" style="--stripe1:var(--teal-tint);--stripe2:var(--teal-tint2);"><span>photo: graduate</span></div></div>
+      <div class="card-body">
+        <div class="card-tag" style="color:var(--teal-deep)">GLOBAL</div>
+        <h3>Scholarships</h3>
+        <p>Opening doors to higher education for students in DFW and across Africa.</p>
+      </div>
+    </div>
+    <div class="card" data-reveal data-delay="60">
+      <div class="card-photo"><div class="ph" style="--stripe1:var(--red-tint);--stripe2:var(--red-tint2);"><span>photo: artists / performance</span></div></div>
+      <div class="card-body">
+        <div class="card-tag" style="color:var(--red-deep)">AFRICA</div>
+        <h3>Arts &amp; Culture</h3>
+        <p>Backing artists, performers and cultural spaces that celebrate African heritage.</p>
+      </div>
+    </div>
+    <div class="card" data-reveal data-delay="120">
+      <div class="card-photo"><div class="ph" style="--stripe1:var(--orange-tint);--stripe2:var(--orange-tint2);"><span>photo: small business owner</span></div></div>
+      <div class="card-body">
+        <div class="card-tag" style="color:var(--orange-deep)">AFRICA</div>
+        <h3>Entrepreneurship</h3>
+        <p>Seed funding and support for founders building the businesses of the future.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="schools" id="schools">
+  <div class="wrap schools-grid">
+    <div data-reveal>
+      <div class="eyebrow" style="color:var(--orange-deep)">THE FEATURED INITIATIVE</div>
+      <h2 style="font-size:clamp(36px,5vw,56px)">Schools across Africa.</h2>
+      <p style="margin-top:16px; color:var(--muted2); font-size:17px; max-width:460px;">We're building our first school in Owerri, Nigeria right now. More of Nigeria is next — then across Africa.</p>
+      <div class="roadmap">
+        <div class="road-step active">
+          <div><div class="step-label">School 01 · Owerri, Nigeria</div><div class="step-sub">Building now</div></div>
+        </div>
+        <div class="road-step">
+          <div><div class="step-label">More of Nigeria</div><div class="step-sub">Planning</div></div>
+        </div>
+        <div class="road-step">
+          <div><div class="step-label">Across Africa</div><div class="step-sub">The goal</div></div>
+        </div>
+      </div>
+      <div class="progress-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+      <div class="progress-label">35% built — Owerri, Nigeria (placeholder, pending real build data)</div>
+      <div class="hero-ctas" style="margin-top:28px;">
+        <a class="btn btn-dark" href="#donate" data-fund="Schools in Africa">Fund a brick →</a>
+      </div>
+    </div>
+    <div class="schools-photo" data-reveal data-delay="150">
+      <div class="ph" style="--stripe1:var(--orange-tint);--stripe2:var(--orange-tint2); aspect-ratio:1/1;"><span>photo: construction, Owerri school site</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap" id="events">
+  <div class="section-head" data-reveal>
+    <div class="eyebrow">COME THROUGH</div>
+    <h2>Upcoming events.</h2>
+    <p style="margin-top:16px; color:var(--muted2); font-size:16px;">Placeholder dates below — swap in the real calendar when it's ready.</p>
+  </div>
+  <div class="events-list" data-reveal>
+    <a class="event-row" style="--event-color:var(--teal)" href="#">
+      <div class="event-date">08<span class="m">Nov</span></div>
+      <div><div class="event-title">Fall Community Day</div><div class="event-place">Dallas, TX · Food, music, resources</div></div>
+      <div class="event-cta">RSVP →</div>
+    </a>
+    <a class="event-row" style="--event-color:var(--orange)" href="#">
+      <div class="event-date">21<span class="m">Nov</span></div>
+      <div><div class="event-title">Thanksgiving Giveback Drive</div><div class="event-place">Fort Worth, TX · Volunteers needed</div></div>
+      <div class="event-cta">Volunteer →</div>
+    </a>
+    <a class="event-row" style="--event-color:var(--red)" href="#">
+      <div class="event-date">12<span class="m">Dec</span></div>
+      <div><div class="event-title">Schools for Africa: Benefit Gala</div><div class="event-place">Dallas, TX · Tickets &amp; tables</div></div>
+      <div class="event-cta">Get tickets →</div>
+    </a>
+    <a class="event-row" style="--event-color:var(--teal)" href="#">
+      <div class="event-date">15<span class="m">Jan</span></div>
+      <div><div class="event-title">Scholarship Applications Open</div><div class="event-place">Online · DFW &amp; Nigeria students</div></div>
+      <div class="event-cta">Learn more →</div>
+    </a>
+  </div>
+</section>
+
+<section class="section wrap">
+  <div class="section-head" data-reveal>
+    <div class="eyebrow">RECENT HIGHLIGHTS</div>
+    <h2 style="font-size:clamp(36px,5vw,56px)">From our 11th Annual Children's Christmas Party.</h2>
+  </div>
+  <div class="gallery-grid" data-reveal>
+    <div class="gallery-item"><img src="assets/photos/gallery-1.jpg" alt="Child with Santa, Big A Foundation Christmas party"></div>
+    <div class="gallery-item"><img src="assets/photos/gallery-2.jpg" alt="Big A Foundation Christmas party"></div>
+    <div class="gallery-item"><img src="assets/photos/gallery-3.jpg" alt="Kids at the Big A Foundation Christmas party"></div>
+    <div class="gallery-item"><img src="assets/photos/gallery-4.jpg" alt="Big A Foundation volunteers"></div>
+  </div>
+</section>
+
+<section class="donate" id="donate">
+  <div class="wrap">
+    <div class="eyebrow">MAKE AN IMPACT</div>
+    <h2 style="font-size:clamp(36px,5vw,64px)">Give today.</h2>
+    <div class="donate-grid">
+      <div class="donate-lead" data-reveal>
+        <p>Every gift moves a family, a scholarship or a school forward — in DFW or across Africa. Choose where it goes below.</p>
+      </div>
+      <div class="donate-card" data-reveal data-delay="100">
+        <div class="toggle-row" id="freq-toggle">
+          <button type="button" data-freq="One-time">One-time</button>
+          <button type="button" data-freq="Monthly" class="on">Monthly</button>
+        </div>
+
+        <div class="field-label">Fund</div>
+        <div class="chip-row" id="fund-row">
+          <button type="button" class="chip on" data-fund="Where needed most">Where needed most</button>
+          <button type="button" class="chip" data-fund="DFW programs">DFW programs</button>
+          <button type="button" class="chip" data-fund="Schools in Africa">Schools in Africa</button>
+          <button type="button" class="chip" data-fund="Scholarships">Scholarships</button>
+          <button type="button" class="chip" data-fund="Arts &amp; culture">Arts &amp; culture</button>
+          <button type="button" class="chip" data-fund="Entrepreneurs">Entrepreneurs</button>
+        </div>
+
+        <div class="field-label">Amount</div>
+        <div class="amt-grid" id="amt-row">
+          <button type="button" data-amt="25">$25</button>
+          <button type="button" data-amt="50" class="on">$50</button>
+          <button type="button" data-amt="100">$100</button>
+          <button type="button" data-amt="250">$250</button>
+        </div>
+
+        <div class="impact-line" id="impact-line"></div>
+
+        <button class="btn btn-primary give-btn" id="give-btn" type="button">Give $50 monthly →</button>
+        <div class="thanks-msg" id="thanks-msg" style="display:none;">Thank you! (This is a placeholder — connect a real donation processor such as Donorbox or Stripe Checkout here before launch.)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap" id="volunteer">
+  <div class="section-head" data-reveal>
+    <div class="eyebrow">GET INVOLVED</div>
+    <h2 style="font-size:clamp(36px,5vw,64px)">Volunteer with us.</h2>
+  </div>
+  <div class="volunteer-card" data-reveal data-delay="100">
+    <div id="vol-form">
+      <div class="form-row"><label for="vol-name">Name</label><input id="vol-name" type="text" placeholder="Your full name"></div>
+      <div class="form-row"><label for="vol-email">Email</label><input id="vol-email" type="email" placeholder="you@email.com"></div>
+      <div class="field-label">Interests</div>
+      <div class="chip-row" id="interest-row">
+        <button type="button" class="chip" data-interest="Events">Events</button>
+        <button type="button" class="chip" data-interest="Mentoring">Mentoring</button>
+        <button type="button" class="chip" data-interest="Resource drives">Resource drives</button>
+        <button type="button" class="chip" data-interest="School building">School building</button>
+        <button type="button" class="chip" data-interest="Arts & culture">Arts &amp; culture</button>
+        <button type="button" class="chip" data-interest="Fundraising">Fundraising</button>
+      </div>
+      <button class="btn btn-dark give-btn" id="vol-submit" type="button">Submit interest →</button>
+    </div>
+    <div class="success-box" id="vol-success" style="display:none;">Thanks for stepping up! We'll be in touch soon. (Placeholder — wire this form to a real backend, CRM or email before launch.)</div>
+  </div>
+</section>
+
+<section class="section wrap">
+  <div class="insta-head" data-reveal>
+    <div>
+      <div class="eyebrow" style="color:var(--teal-deep)">@BIGAFOUNDATION</div>
+      <h2 style="font-size:clamp(32px,4.5vw,48px)">Follow along.</h2>
+    </div>
+    <a class="btn btn-outline" href="https://www.instagram.com/bigafoundation/" target="_blank" rel="noopener">Follow on Instagram →</a>
+  </div>
+  <div class="insta-grid" data-reveal>
+    <a href="https://www.instagram.com/bigafoundation/" target="_blank" rel="noopener"><img src="assets/photos/insta-1.jpg" alt=""></a>
+    <a href="https://www.instagram.com/bigafoundation/" target="_blank" rel="noopener"><img src="assets/photos/insta-2.jpg" alt=""></a>
+    <a href="https://www.instagram.com/bigafoundation/" target="_blank" rel="noopener"><img src="assets/photos/insta-3.jpg" alt=""></a>
+    <a href="https://www.instagram.com/bigafoundation/" target="_blank" rel="noopener"><img src="assets/photos/insta-4.jpg" alt=""></a>
+    <a href="https://www.instagram.com/bigafoundation/" target="_blank" rel="noopener"><img src="assets/photos/insta-5.jpg" alt=""></a>
+    <a href="https://www.instagram.com/bigafoundation/" target="_blank" rel="noopener"><img src="assets/photos/insta-6.jpg" alt=""></a>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="assets/big-a-logo.jpeg" alt="Big A Foundation">
+        <span>Big A Foundation</span>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:hello@bigafoundation.org">hello@bigafoundation.org</a>
+          <a href="mailto:partners@bigafoundation.org">partners@bigafoundation.org</a>
+        </div>
+        <div class="footer-col">
+          <h4>Follow</h4>
+          <a href="https://www.instagram.com/bigafoundation/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+        <div class="footer-col">
+          <h4>Based in</h4>
+          <div>Dallas–Fort Worth, TX</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span id="year"></span> Big A Foundation. 501(c)(3) nonprofit. EIN 00-0000000 (placeholder).</div>
+      <div>Site by Sylective Media</div>
+    </div>
+    <div class="wordmark">BIG A FOUNDATION</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // scroll reveal
+  var revealEls = document.querySelectorAll('[data-reveal]');
+  if('IntersectionObserver' in window && !reduceMotion){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          var delay = entry.target.getAttribute('data-delay') || 0;
+          setTimeout(function(){ entry.target.classList.add('in'); }, delay);
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function(el){ io.observe(el); });
+    // failsafe: never leave content permanently invisible (e.g. throttled/background tabs)
+    setTimeout(function(){
+      revealEls.forEach(function(el){ el.classList.add('in'); });
+    }, 4000);
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  // count-up stats
+  function countUp(el, target){
+    if(reduceMotion){ el.textContent = target.toLocaleString(); return; }
+    var start = null, duration = 1800;
+    function step(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased).toLocaleString();
+      if(p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var statEls = document.querySelectorAll('[data-count]');
+  if('IntersectionObserver' in window){
+    var statIo = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          countUp(entry.target, parseInt(entry.target.getAttribute('data-count'), 10));
+          statIo.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    statEls.forEach(function(el){ statIo.observe(el); });
+  }
+
+  // schools progress bar
+  var bar = document.getElementById('progress-bar');
+  if(bar && 'IntersectionObserver' in window){
+    var barIo = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          requestAnimationFrame(function(){ bar.classList.add('go'); });
+          barIo.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    barIo.observe(bar);
+  }
+
+  // hero word rotator
+  var words = ['DFW', 'Nigeria', 'Fort Worth', 'Africa', 'your block'];
+  var colors = ['var(--teal)', 'var(--orange)', 'var(--teal)', 'var(--orange)', 'var(--red)'];
+  var wi = 0;
+  var rotatorEl = document.getElementById('rotator-word');
+  if(rotatorEl && !reduceMotion){
+    setInterval(function(){
+      rotatorEl.classList.add('leaving');
+      setTimeout(function(){
+        wi = (wi + 1) % words.length;
+        rotatorEl.textContent = words[wi];
+        rotatorEl.style.borderBottomColor = colors[wi];
+        rotatorEl.classList.remove('leaving');
+      }, 300);
+    }, 2200);
+  }
+
+  // hero parallax
+  var parallaxEls = document.querySelectorAll('[data-parallax]');
+  if(!reduceMotion && parallaxEls.length){
+    window.addEventListener('scroll', function(){
+      var y = window.scrollY;
+      parallaxEls.forEach(function(el){
+        var factor = parseFloat(el.getAttribute('data-parallax'));
+        el.style.transform = 'translateY(' + (y * factor) + 'px)';
+      });
+    }, { passive: true });
+  }
+
+  // donation widget
+  var freq = 'Monthly', fund = 'Where needed most', amt = 50;
+  var impactMap = {
+    25: 'buys school supplies for a student',
+    50: 'stocks a family resource kit',
+    100: 'funds desks for a new classroom',
+    250: 'moves a student closer to a full scholarship'
+  };
+  function renderDonate(){
+    var line = '$' + amt + (freq === 'Monthly' ? '/month' : '') + ' ' + impactMap[amt] + '. Going to: ' + fund + '.';
+    document.getElementById('impact-line').textContent = line;
+    document.getElementById('give-btn').textContent = 'Give $' + amt + (freq === 'Monthly' ? ' monthly' : '') + ' →';
+  }
+  document.querySelectorAll('#freq-toggle button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('#freq-toggle button').forEach(function(b){ b.classList.remove('on'); });
+      btn.classList.add('on');
+      freq = btn.getAttribute('data-freq');
+      document.getElementById('thanks-msg').style.display = 'none';
+      renderDonate();
+    });
+  });
+  document.querySelectorAll('#fund-row .chip').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('#fund-row .chip').forEach(function(b){ b.classList.remove('on'); });
+      btn.classList.add('on');
+      fund = btn.getAttribute('data-fund');
+      document.getElementById('thanks-msg').style.display = 'none';
+      renderDonate();
+    });
+  });
+  document.querySelectorAll('#amt-row button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('#amt-row button').forEach(function(b){ b.classList.remove('on'); });
+      btn.classList.add('on');
+      amt = parseInt(btn.getAttribute('data-amt'), 10);
+      document.getElementById('thanks-msg').style.display = 'none';
+      renderDonate();
+    });
+  });
+  document.getElementById('give-btn').addEventListener('click', function(){
+    document.getElementById('thanks-msg').style.display = 'block';
+  });
+  // "Fund a brick" preselects Schools in Africa
+  document.querySelectorAll('[data-fund="Schools in Africa"]').forEach(function(el){
+    if(el.tagName === 'A'){
+      el.addEventListener('click', function(){
+        var chip = document.querySelector('#fund-row .chip[data-fund="Schools in Africa"]');
+        if(chip) chip.click();
+      });
+    }
+  });
+  renderDonate();
+
+  // volunteer form
+  var interests = [];
+  document.querySelectorAll('#interest-row .chip').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var val = btn.getAttribute('data-interest');
+      var idx = interests.indexOf(val);
+      if(idx > -1){ interests.splice(idx, 1); btn.classList.remove('on'); }
+      else { interests.push(val); btn.classList.add('on'); }
+    });
+  });
+  document.getElementById('vol-submit').addEventListener('click', function(){
+    document.getElementById('vol-form').style.display = 'none';
+    document.getElementById('vol-success').style.display = 'block';
+  });
+
+  // mobile nav toggle
+  var toggle = document.getElementById('nav-toggle');
+  var navLinks = document.getElementById('nav-links');
+  if(toggle && navLinks){
+    toggle.addEventListener('click', function(){
+      var open = navLinks.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    navLinks.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        navLinks.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
