@@ -127,8 +127,16 @@ header{
 .xmas-ctas{ margin-top:32px; display:flex; gap:14px; flex-wrap:wrap; }
 .xmas .btn-primary{ background:#fff; color:var(--red); box-shadow:none; }
 .xmas .btn-outline{ border-color:#fff; color:#fff; }
-.xmas-reel{ display:flex; justify-content:center; }
-.xmas-reel iframe{ border-radius:16px; box-shadow:0 30px 60px -30px rgba(0,0,0,.45); max-width:100% !important; }
+.video-card{ display:block; position:relative; border-radius:24px; overflow:hidden; text-decoration:none; color:inherit; aspect-ratio:9/13; background:var(--orange-tint2); box-shadow:0 30px 60px -30px rgba(0,0,0,.45); }
+.video-card img{ width:100%; height:100%; object-fit:cover; }
+.video-card::after{ content:''; position:absolute; inset:0; background:linear-gradient(0deg, rgba(0,0,0,.65) 0%, rgba(0,0,0,0) 45%); }
+.video-card .play{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:64px; height:64px; border-radius:50%; background:rgba(255,255,255,.95); display:flex; align-items:center; justify-content:center; transition:transform .25s ease; z-index:2; }
+.video-card:hover .play{ transform:translate(-50%,-50%) scale(1.08); }
+.video-card .play svg{ width:22px; height:22px; margin-left:3px; }
+.video-card .caption{ position:absolute; left:18px; right:18px; bottom:16px; z-index:2; color:#fff; }
+.video-card .caption .tag{ font-family:var(--mono); font-size:10px; letter-spacing:.08em; text-transform:uppercase; opacity:.9; }
+.video-card .caption .title{ font-family:var(--display); font-weight:800; font-size:17px; margin-top:4px; }
+.video-card .caption .sub{ font-size:12px; opacity:.85; margin-top:2px; }
 
 /* ===== marquee ===== */
 .marquee-wrap{ background:var(--ink); color:#fff; padding:22px 0; overflow:hidden; white-space:nowrap; }
@@ -204,10 +212,8 @@ header{
 .gallery-item.tall{ aspect-ratio:1/1.6; grid-row:span 2; }
 .highlights-split{ display:grid; grid-template-columns:1.4fr 1fr; gap:32px; align-items:start; }
 @media (max-width:900px){ .highlights-split{ grid-template-columns:1fr; } }
-.reel-stack{ display:flex; flex-direction:column; gap:24px; }
-.reel-feature{ background:#fff; border-radius:28px; padding:24px; box-shadow:0 20px 50px -35px rgba(22,20,18,.25); }
-.reel-embed{ max-width:100%; overflow:hidden; border-radius:16px; }
-.reel-embed iframe{ max-width:100% !important; }
+.reel-stack{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+@media (max-width:500px){ .reel-stack{ grid-template-columns:1fr; } }
 
 /* ===== donate ===== */
 .donate{ background:var(--ink); color:#fff; padding:var(--sec) 0; }
@@ -333,9 +339,15 @@ footer{ background:var(--ink); color:var(--ondark-muted); padding:72px 0 40px; }
         <a class="btn btn-outline" href="#volunteer">Volunteer at the party</a>
       </div>
     </div>
-    <div class="xmas-reel" data-reveal data-delay="150">
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DRAqXR6khVZ/" data-instgrm-version="14" style="margin:0 auto;"></blockquote>
-    </div>
+    <a class="video-card" data-reveal data-delay="150" href="https://www.instagram.com/reel/DRAqXR6khVZ/" target="_blank" rel="noopener">
+      <img src="assets/photos/gallery-3.jpg" alt="Watch: Big A Foundation Children's Christmas Party">
+      <div class="play"><svg viewBox="0 0 24 24" fill="var(--red)"><path d="M8 5v14l11-7z"/></svg></div>
+      <div class="caption">
+        <div class="tag">Watch</div>
+        <div class="title">Free Children's Christmas Party</div>
+        <div class="sub">Promo reel · @bigaent</div>
+      </div>
+    </a>
   </div>
 </section>
 
@@ -372,7 +384,7 @@ footer{ background:var(--ink); color:var(--ondark-muted); padding:72px 0 40px; }
     <div class="mission-card dfw" data-reveal>
       <div class="eyebrow">DALLAS–FORT WORTH</div>
       <h3>Showing up for our block.</h3>
-      <p>Community programs, family resources, mentoring and events for DFW families — built with the neighborhoods we serve, not just for them.</p>
+      <p>Community programs, family resources, mentoring and events — built with DFW families, not just for them.</p>
     </div>
     <div class="mission-card africa" data-reveal data-delay="120">
       <div class="eyebrow">NIGERIA &amp; AFRICA</div>
@@ -485,26 +497,27 @@ footer{ background:var(--ink); color:var(--ondark-muted); padding:72px 0 40px; }
       <div class="gallery-item"><img src="assets/photos/gallery-5.jpg" alt="Basketmouth Live in Dallas, Hyenas Comedy Club, 2025"></div>
     </div>
     <div class="reel-stack">
-      <div class="reel-feature">
-        <div class="card-tag" style="color:var(--orange-deep)">NIGERIA</div>
-        <h3 style="font-size:19px; margin-top:8px; font-weight:700;">Christmas in Ogberuru, Nigeria</h3>
-        <p style="margin-top:6px; color:var(--muted2); font-size:14px;">Gifts, food and music for children in Ogberuru, Orlu LGA.</p>
-        <div class="reel-embed">
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DTikCYVEf4p/" data-instgrm-version="14" style="margin:16px auto 0;"></blockquote>
+      <a class="video-card" href="https://www.instagram.com/reel/DTikCYVEf4p/" target="_blank" rel="noopener">
+        <div class="ph" style="--stripe1:var(--orange-tint);--stripe2:var(--orange-tint2); height:100%;"></div>
+        <div class="play"><svg viewBox="0 0 24 24" fill="var(--orange-deep)"><path d="M8 5v14l11-7z"/></svg></div>
+        <div class="caption">
+          <div class="tag">Nigeria</div>
+          <div class="title">Christmas in Ogberuru</div>
+          <div class="sub">Gifts, food &amp; music for the kids</div>
         </div>
-      </div>
-      <div class="reel-feature">
-        <div class="card-tag" style="color:var(--teal-deep)">DFW · 2022</div>
-        <h3 style="font-size:19px; margin-top:8px; font-weight:700;">Thanks to the parents</h3>
-        <p style="margin-top:6px; color:var(--muted2); font-size:14px;">A look back at the Children's Christmas Party, DFW.</p>
-        <div class="reel-embed">
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/CmIYf74AUHC/" data-instgrm-version="14" style="margin:16px auto 0;"></blockquote>
+      </a>
+      <a class="video-card" href="https://www.instagram.com/reel/CmIYf74AUHC/" target="_blank" rel="noopener">
+        <img src="assets/photos/gallery-1.jpg" alt="Watch: Big A Foundation Christmas party, 2022">
+        <div class="play"><svg viewBox="0 0 24 24" fill="var(--teal-deep)"><path d="M8 5v14l11-7z"/></svg></div>
+        <div class="caption">
+          <div class="tag">DFW · 2022</div>
+          <div class="title">Thanks to the parents</div>
+          <div class="sub">A look back at the Christmas party</div>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
-<script async src="//www.instagram.com/embed.js"></script>
 
 <section class="donate" id="donate">
   <div class="wrap">
