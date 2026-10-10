@@ -60,6 +60,7 @@ header{
 .nav-links{ display:flex; align-items:center; gap:32px; list-style:none; margin:0; padding:0; }
 .nav-links a{ text-decoration:none; font-weight:600; font-size:15px; color:var(--muted); }
 .nav-links a:hover{ color:var(--ink); }
+.nav-links a.nav-highlight{ color:var(--red); }
 .nav-donate{ background:var(--red); color:#fff; font-weight:700; padding:11px 22px; border-radius:999px; text-decoration:none; font-size:14px; }
 .nav-toggle{ display:none; background:none; border:none; cursor:pointer; padding:6px; }
 .nav-toggle span{ display:block; width:22px; height:2px; background:var(--ink); margin:5px 0; }
@@ -109,6 +110,26 @@ header{
 .float-badge .heart{ color:var(--red); animation:pulse 1.4s ease-in-out infinite; }
 @keyframes pulse{ 0%,100%{transform:scale(1);} 50%{transform:scale(1.25);} }
 @media (prefers-reduced-motion:reduce){ .float-badge, .float-badge .heart{ animation:none; } }
+
+/* ===== christmas party feature ===== */
+.xmas{ background:var(--red); color:#fff; padding:var(--sec) 0; position:relative; overflow:hidden; }
+.xmas::before{ content:''; position:absolute; inset:0; background-image:repeating-linear-gradient(135deg, rgba(255,255,255,.05), rgba(255,255,255,.05) 2px, transparent 2px, transparent 40px); pointer-events:none; }
+.xmas-grid{ position:relative; display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; }
+@media (max-width:900px){ .xmas-grid{ grid-template-columns:1fr; } }
+.xmas .eyebrow{ color:#fff; opacity:.85; display:flex; align-items:center; gap:8px; }
+.xmas .eyebrow .pill{ background:#fff; color:var(--red); padding:4px 10px; border-radius:999px; font-weight:700; }
+.xmas h2{ color:#fff; font-size:clamp(40px,5.5vw,72px); margin-top:16px; }
+.xmas-details{ margin-top:20px; font-size:18px; line-height:1.6; opacity:.95; }
+.xmas-countdown{ display:flex; gap:14px; margin-top:32px; flex-wrap:wrap; }
+.xmas-countdown .unit{ background:rgba(255,255,255,.14); border-radius:16px; padding:14px 18px; min-width:76px; text-align:center; }
+.xmas-countdown .unit .n{ font-family:var(--display); font-weight:800; font-size:30px; line-height:1; }
+.xmas-countdown .unit .l{ font-family:var(--mono); font-size:10px; letter-spacing:.08em; text-transform:uppercase; opacity:.8; margin-top:4px; }
+.xmas-ctas{ margin-top:32px; display:flex; gap:14px; flex-wrap:wrap; }
+.xmas .btn-primary{ background:#fff; color:var(--red); box-shadow:none; }
+.xmas .btn-outline{ border-color:#fff; color:#fff; }
+.xmas-photo{ position:relative; border-radius:32px; overflow:hidden; aspect-ratio:1/1; box-shadow:0 30px 60px -30px rgba(0,0,0,.45); }
+.xmas-photo img{ width:100%; height:100%; object-fit:cover; }
+.xmas-photo .tag{ position:absolute; left:16px; bottom:16px; background:#fff; color:var(--red); font-weight:800; font-family:var(--display); padding:8px 16px; border-radius:999px; font-size:14px; }
 
 /* ===== marquee ===== */
 .marquee-wrap{ background:var(--ink); color:#fff; padding:22px 0; overflow:hidden; white-space:nowrap; }
@@ -249,6 +270,7 @@ footer{ background:var(--ink); color:var(--ondark-muted); padding:72px 0 40px; }
       <span>Big A Foundation</span>
     </a>
     <ul class="nav-links" id="nav-links">
+      <li><a href="#christmas-party" class="nav-highlight">Christmas Party</a></li>
       <li><a href="#programs">Programs</a></li>
       <li><a href="#schools">Schools</a></li>
       <li><a href="#events">Events</a></li>
@@ -287,6 +309,33 @@ footer{ background:var(--ink); color:var(--ondark-muted); padding:72px 0 40px; }
         <div class="ph" style="--stripe1:var(--orange-tint);--stripe2:var(--orange-tint2);"><span>photo: students in Nigeria</span></div>
       </div>
       <div class="float-badge"><span class="heart">♥</span> DFW ↔ Africa, one family</div>
+    </div>
+  </div>
+</section>
+
+<section class="xmas" id="christmas-party">
+  <div class="wrap xmas-grid">
+    <div data-reveal>
+      <div class="eyebrow"><span class="pill">15TH ANNUAL</span> FREE ENTRY</div>
+      <h2>Children's<br>Christmas Party</h2>
+      <div class="xmas-details">
+        Sunday, December 6, 2026 · 3–7pm<br>
+        C&amp;C Ballroom Event Center, Garland, TX<br>
+        Santa, face painting, free food &amp; gifts, and lots of prizes.
+      </div>
+      <div class="xmas-countdown" id="xmas-countdown">
+        <div class="unit"><div class="n" id="cd-days">–</div><div class="l">Days</div></div>
+        <div class="unit"><div class="n" id="cd-hours">–</div><div class="l">Hours</div></div>
+        <div class="unit"><div class="n" id="cd-mins">–</div><div class="l">Minutes</div></div>
+      </div>
+      <div class="xmas-ctas">
+        <a class="btn btn-primary" href="https://www.instagram.com/bigafoundation/" target="_blank" rel="noopener">Get updates on Instagram →</a>
+        <a class="btn btn-outline" href="#volunteer">Volunteer at the party</a>
+      </div>
+    </div>
+    <div class="xmas-photo" data-reveal data-delay="150">
+      <img src="assets/photos/hero-dfw.jpg" alt="Big A Foundation Children's Christmas Party">
+      <div class="tag">Every December, DFW</div>
     </div>
   </div>
 </section>
@@ -423,14 +472,9 @@ footer{ background:var(--ink); color:var(--ondark-muted); padding:72px 0 40px; }
 <section class="section wrap" id="events">
   <div class="section-head" data-reveal>
     <div class="eyebrow">COME THROUGH</div>
-    <h2>Upcoming events.</h2>
+    <h2>More upcoming events.</h2>
   </div>
   <div class="events-list" data-reveal>
-    <a class="event-row" style="--event-color:var(--red)" href="#">
-      <div class="event-date">06<span class="m">Dec 2026</span></div>
-      <div><div class="event-title">15th Annual Children's Christmas Party</div><div class="event-place">C&amp;C Ballroom Event Center, Garland, TX · Free entry</div></div>
-      <div class="event-cta">Learn more →</div>
-    </a>
     <a class="event-row" style="--event-color:var(--orange)" href="#">
       <div class="event-date">17<span class="m">Apr 2027</span></div>
       <div><div class="event-title">Comedy Across the Continent</div><div class="event-place">Hyenas Comedy Club, Dallas, TX</div></div>
@@ -761,6 +805,21 @@ footer{ background:var(--ink); color:var(--ondark-muted); padding:72px 0 40px; }
       });
     });
   }
+
+  // christmas party countdown
+  var xmasTarget = new Date('2026-12-06T15:00:00-06:00').getTime();
+  function updateCountdown(){
+    var diff = xmasTarget - Date.now();
+    var d = document.getElementById('cd-days'), h = document.getElementById('cd-hours'), m = document.getElementById('cd-mins');
+    if(!d) return;
+    if(diff <= 0){ d.textContent = '0'; h.textContent = '0'; m.textContent = '0'; return; }
+    var days = Math.floor(diff / 86400000);
+    var hours = Math.floor((diff % 86400000) / 3600000);
+    var mins = Math.floor((diff % 3600000) / 60000);
+    d.textContent = days; h.textContent = hours; m.textContent = mins;
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 60000);
 
   document.getElementById('year').textContent = new Date().getFullYear();
 })();
