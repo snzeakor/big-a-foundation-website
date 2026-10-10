@@ -182,6 +182,11 @@ header{
 .gallery-grid img, .gallery-grid .ph{ border-radius:20px; aspect-ratio:1/1; object-fit:cover; width:100%; height:100%; }
 .gallery-item{ border-radius:20px; overflow:hidden; aspect-ratio:1/1; }
 .gallery-item.tall{ aspect-ratio:1/1.6; grid-row:span 2; }
+.highlights-split{ display:grid; grid-template-columns:1.4fr 1fr; gap:32px; align-items:start; }
+@media (max-width:900px){ .highlights-split{ grid-template-columns:1fr; } }
+.reel-feature{ background:#fff; border-radius:28px; padding:24px; box-shadow:0 20px 50px -35px rgba(22,20,18,.25); }
+.reel-embed{ max-width:100%; overflow:hidden; border-radius:16px; }
+.reel-embed iframe{ max-width:100% !important; }
 
 /* ===== donate ===== */
 .donate{ background:var(--ink); color:#fff; padding:var(--sec) 0; }
@@ -444,14 +449,25 @@ footer{ background:var(--ink); color:var(--ondark-muted); padding:72px 0 40px; }
     <div class="eyebrow">RECENT HIGHLIGHTS</div>
     <h2 style="font-size:clamp(36px,5vw,56px)">From our events.</h2>
   </div>
-  <div class="gallery-grid" data-reveal>
-    <div class="gallery-item"><img src="assets/photos/gallery-1.jpg" alt="Child with Santa, Big A Foundation Christmas party"></div>
-    <div class="gallery-item"><img src="assets/photos/gallery-2.jpg" alt="Big A Foundation Christmas party"></div>
-    <div class="gallery-item"><img src="assets/photos/gallery-3.jpg" alt="Kids at the Big A Foundation Christmas party"></div>
-    <div class="gallery-item"><img src="assets/photos/gallery-4.jpg" alt="Big A Foundation volunteers"></div>
-    <div class="gallery-item"><img src="assets/photos/gallery-5.jpg" alt="Basketmouth Live in Dallas, Hyenas Comedy Club, 2025"></div>
+  <div class="highlights-split" data-reveal>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="assets/photos/gallery-1.jpg" alt="Child with Santa, Big A Foundation Christmas party"></div>
+      <div class="gallery-item"><img src="assets/photos/gallery-2.jpg" alt="Big A Foundation Christmas party"></div>
+      <div class="gallery-item"><img src="assets/photos/gallery-3.jpg" alt="Kids at the Big A Foundation Christmas party"></div>
+      <div class="gallery-item"><img src="assets/photos/gallery-4.jpg" alt="Big A Foundation volunteers"></div>
+      <div class="gallery-item"><img src="assets/photos/gallery-5.jpg" alt="Basketmouth Live in Dallas, Hyenas Comedy Club, 2025"></div>
+    </div>
+    <div class="reel-feature">
+      <div class="card-tag" style="color:var(--orange-deep)">NIGERIA</div>
+      <h3 style="font-size:19px; margin-top:8px; font-weight:700;">Christmas in Ogberuru, Nigeria</h3>
+      <p style="margin-top:6px; color:var(--muted2); font-size:14px;">Gifts, food and music for children in Ogberuru, Orlu LGA.</p>
+      <div class="reel-embed">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DTikCYVEf4p/" data-instgrm-version="14" style="margin:16px auto 0;"></blockquote>
+      </div>
+    </div>
   </div>
 </section>
+<script async src="//www.instagram.com/embed.js"></script>
 
 <section class="donate" id="donate">
   <div class="wrap">
