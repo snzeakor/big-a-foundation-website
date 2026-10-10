@@ -93,7 +93,7 @@ header{
 .hero h1 .red{ color:var(--red); }
 .hero-sub{ margin-top:28px; }
 .hero-sub .rotator-row{ display:flex; align-items:baseline; gap:10px; font-size:clamp(22px,2.6vw,30px); font-weight:700; font-family:var(--display); flex-wrap:wrap; }
-.rotator{ position:relative; display:inline-block; min-width:160px; }
+.rotator{ position:relative; display:inline-block; min-width:220px; }
 .rotator-word{ display:inline-block; border-bottom:5px solid var(--teal); padding-bottom:2px; transition:opacity .6s ease, transform .6s ease, filter .6s ease; }
 .rotator-word.leaving{ opacity:0; transform:translateY(-10px); filter:blur(6px); }
 .hero p.lead{ margin-top:24px; max-width:460px; font-size:19px; color:var(--muted); line-height:1.6; }
@@ -722,8 +722,8 @@ footer{ background:var(--ink); color:var(--ondark-muted); padding:72px 0 40px; }
   }
 
   // hero word rotator
-  var words = ['DFW', 'Nigeria', 'Fort Worth', 'Africa', 'your block'];
-  var colors = ['var(--teal)', 'var(--orange)', 'var(--teal)', 'var(--orange)', 'var(--red)'];
+  var words = ['Lagos', 'Abuja', 'Dallas', 'Plano', 'Addison', 'Richardson', 'Uptown', 'Downtown', 'Enugu', 'Anambra'];
+  var colors = ['var(--orange)', 'var(--orange)', 'var(--teal)', 'var(--teal)', 'var(--teal)', 'var(--teal)', 'var(--teal)', 'var(--teal)', 'var(--orange)', 'var(--orange)'];
   var wi = 0;
   var rotatorEl = document.getElementById('rotator-word');
   if(rotatorEl && !reduceMotion){
