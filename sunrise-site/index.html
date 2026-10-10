@@ -55,7 +55,7 @@ header{
 }
 .nav{ position:relative; display:flex; align-items:center; justify-content:space-between; padding:16px var(--pad); max-width:var(--max); margin:0 auto; }
 .brand{ display:flex; align-items:center; gap:10px; text-decoration:none; }
-.brand img{ width:38px; height:38px; border-radius:10px; mix-blend-mode:multiply; }
+.brand img{ width:56px; height:56px; border-radius:12px; mix-blend-mode:multiply; }
 .brand span{ font-family:var(--display); font-weight:800; font-size:18px; color:var(--ink); }
 .nav-links{ display:flex; align-items:center; gap:32px; list-style:none; margin:0; padding:0; }
 .nav-links a{ text-decoration:none; font-weight:600; font-size:15px; color:var(--muted); }
@@ -163,6 +163,10 @@ header{
 .mission-card.africa .eyebrow{ color:var(--orange-deep); }
 .mission-card h3{ font-size:clamp(26px,3vw,36px); font-weight:800; margin-bottom:10px; }
 .mission-card p{ color:var(--muted2); font-size:17px; max-width:440px; }
+.leadership-card{ display:grid; grid-template-columns:260px 1fr; gap:40px; align-items:center; }
+@media (max-width:640px){ .leadership-card{ grid-template-columns:1fr; } }
+.leadership-photo{ border-radius:28px; overflow:hidden; aspect-ratio:4/3; box-shadow:0 30px 60px -30px rgba(22,20,18,.35); }
+.leadership-photo img{ width:100%; height:100%; object-fit:cover; }
 
 /* ===== programs ===== */
 .section{ padding:var(--sec) 0; }
@@ -257,7 +261,7 @@ header{
 footer{ background:var(--ink); color:var(--ondark-muted); padding:72px 0 40px; }
 .footer-top{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:40px; padding-bottom:48px; border-bottom:1px solid rgba(255,255,255,.1); }
 .footer-brand{ display:flex; align-items:center; gap:12px; }
-.footer-brand img{ width:44px; height:44px; border-radius:12px; }
+.footer-brand img{ width:64px; height:64px; border-radius:14px; }
 .footer-brand span{ font-family:var(--display); font-weight:800; font-size:20px; color:#fff; }
 .footer-links{ display:flex; gap:56px; flex-wrap:wrap; }
 .footer-col h4{ font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--ondark-muted2); margin-bottom:14px; font-weight:500; }
@@ -312,7 +316,7 @@ footer{ background:var(--ink); color:var(--ondark-muted); padding:72px 0 40px; }
         <img src="assets/photos/hero-dfw.jpg" alt="Big A Foundation Christmas party, Dallas–Fort Worth">
       </div>
       <div class="hero-photo hero-photo-2" data-parallax="0.08">
-        <div class="ph" style="--stripe1:var(--orange-tint);--stripe2:var(--orange-tint2);"><span>photo: students in Nigeria</span></div>
+        <img src="assets/photos/africa-supplies-1.jpg" alt="Students in Nigeria receiving supplies from Big A Foundation">
       </div>
       <div class="float-badge"><span class="heart">♥</span> DFW ↔ Africa, one family</div>
     </div>
@@ -394,6 +398,19 @@ footer{ background:var(--ink); color:var(--ondark-muted); padding:72px 0 40px; }
   </div>
 </section>
 
+<section class="section wrap">
+  <div class="leadership-card" data-reveal>
+    <div class="leadership-photo">
+      <img src="assets/photos/founders.jpg" alt="Big A Foundation leadership at the Children's Christmas Party">
+    </div>
+    <div>
+      <div class="eyebrow" style="color:var(--red-deep)">LED BY PEOPLE WHO SHOW UP</div>
+      <h3 style="font-size:clamp(24px,3vw,32px); margin-top:10px; font-weight:800;">Our founders, on the ground every year.</h3>
+      <p style="margin-top:12px; color:var(--muted2); font-size:16px; max-width:480px;">From Dallas to Owerri, Big A Foundation's leadership shows up in person — at every Christmas party, every supply drop, every school visit.</p>
+    </div>
+  </div>
+</section>
+
 <section class="section wrap" id="programs">
   <div class="section-head" data-reveal>
     <div class="eyebrow">WHAT WE DO</div>
@@ -417,7 +434,7 @@ footer{ background:var(--ink); color:var(--ondark-muted); padding:72px 0 40px; }
       </div>
     </div>
     <div class="card" data-reveal data-delay="120">
-      <div class="card-photo"><div class="ph" style="--stripe1:var(--orange-tint);--stripe2:var(--orange-tint2);"><span>photo: classroom</span></div></div>
+      <div class="card-photo"><img src="assets/photos/africa-supplies-2.jpg" alt="Big A Foundation supplies distribution, Nigeria"></div>
       <div class="card-body">
         <div class="card-tag" style="color:var(--orange-deep)">NIGERIA + AFRICA</div>
         <h3>Schools Across Africa</h3>
