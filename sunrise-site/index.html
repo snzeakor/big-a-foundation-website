@@ -55,7 +55,7 @@ header{
 }
 .nav{ position:relative; display:flex; align-items:center; justify-content:space-between; padding:16px var(--pad); max-width:var(--max); margin:0 auto; }
 .brand{ display:flex; align-items:center; gap:10px; text-decoration:none; }
-.brand img{ width:56px; height:56px; border-radius:12px; mix-blend-mode:multiply; }
+.brand img{ width:84px; height:84px; border-radius:14px; mix-blend-mode:multiply; }
 .brand span{ font-family:var(--display); font-weight:800; font-size:18px; color:var(--ink); }
 .nav-links{ display:flex; align-items:center; gap:32px; list-style:none; margin:0; padding:0; }
 .nav-links a{ text-decoration:none; font-weight:600; font-size:15px; color:var(--muted); }
@@ -228,14 +228,10 @@ header{
 .event-cta{ margin-left:auto; font-weight:700; font-size:14px; white-space:nowrap; }
 
 /* ===== gallery ===== */
-.gallery-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr)); gap:18px; }
-.gallery-grid img, .gallery-grid .ph{ border-radius:20px; aspect-ratio:1/1; object-fit:cover; width:100%; height:100%; }
+.highlights-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:18px; }
+.highlights-grid img{ border-radius:20px; aspect-ratio:1/1; object-fit:cover; width:100%; height:100%; display:block; }
 .gallery-item{ border-radius:20px; overflow:hidden; aspect-ratio:1/1; }
-.gallery-item.tall{ aspect-ratio:1/1.6; grid-row:span 2; }
-.highlights-split{ display:grid; grid-template-columns:1.4fr 1fr; gap:32px; align-items:start; }
-@media (max-width:900px){ .highlights-split{ grid-template-columns:1fr; } }
-.reel-stack{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
-@media (max-width:500px){ .reel-stack{ grid-template-columns:1fr; } }
+.video-card.square{ aspect-ratio:1/1; }
 
 /* ===== donate ===== */
 .donate{ background:var(--ink); color:#fff; padding:var(--sec) 0; }
@@ -260,7 +256,12 @@ header{
 .thanks-msg{ margin-top:20px; background:var(--teal-tint2); color:var(--teal-deep); border-radius:14px; padding:16px; font-weight:600; text-align:center; }
 
 /* ===== volunteer ===== */
+.volunteer-grid{ display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; }
+@media (max-width:860px){ .volunteer-grid{ grid-template-columns:1fr; } }
 .volunteer-card{ max-width:640px; background:#fff; border-radius:28px; padding:40px; box-shadow:0 20px 50px -35px rgba(22,20,18,.25); }
+.volunteer-logo-feature{ display:flex; align-items:center; justify-content:center; background:var(--teal-tint2); border-radius:32px; padding:48px; height:100%; min-height:320px; }
+.volunteer-logo-feature img{ width:100%; max-width:280px; mix-blend-mode:multiply; }
+@media (max-width:860px){ .volunteer-logo-feature{ min-height:220px; padding:32px; } .volunteer-logo-feature img{ max-width:180px; } }
 .form-row{ margin-bottom:18px; }
 .form-row label{ display:block; font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin-bottom:8px; }
 .form-row input{ width:100%; border:2px solid var(--input-border); border-radius:14px; padding:14px 16px; font-family:var(--body); font-size:15px; }
@@ -505,7 +506,7 @@ footer{ background:var(--ink); color:var(--ondark-muted); padding:72px 0 40px; }
       </div>
     </div>
     <div class="card" data-reveal data-delay="60">
-      <div class="card-photo"><img src="assets/photos/program-family.jpg" alt="Family resource drive, Dallas–Fort Worth"></div>
+      <div class="card-photo"><img src="assets/photos/program-family-2.jpg" alt="Big A Foundation volunteer distributing food, Dallas–Fort Worth"></div>
       <div class="card-body">
         <div class="card-tag" style="color:var(--red-deep)">DFW</div>
         <h3>Family Resources</h3>
@@ -599,38 +600,34 @@ footer{ background:var(--ink); color:var(--ondark-muted); padding:72px 0 40px; }
     <div class="eyebrow">RECENT HIGHLIGHTS</div>
     <h2 style="font-size:clamp(36px,5vw,56px)">From our events.</h2>
   </div>
-  <div class="highlights-split" data-reveal>
-    <div class="gallery-grid">
-      <div class="gallery-item"><img src="assets/photos/gallery-1.jpg" alt="Child with Santa, Big A Foundation Christmas party"></div>
-      <div class="gallery-item"><img src="assets/photos/gallery-2.jpg" alt="Big A Foundation Christmas party"></div>
-      <div class="gallery-item"><img src="assets/photos/gallery-3.jpg" alt="Kids at the Big A Foundation Christmas party"></div>
-      <div class="gallery-item"><img src="assets/photos/gallery-4.jpg" alt="Big A Foundation volunteers"></div>
-      <div class="gallery-item"><img src="assets/photos/gallery-5.jpg" alt="Basketmouth Live in Dallas, Hyenas Comedy Club, 2025"></div>
-      <div class="gallery-item"><img src="assets/photos/afrimma-crowd.jpg" alt="AFRIMMA Musicfest crowd, Dallas"></div>
-      <div class="gallery-item"><img src="assets/photos/afrimma-award.jpg" alt="AFRIMMA award winner, Dallas"></div>
-      <div class="gallery-item"><img src="assets/photos/afrimma-volunteers.jpg" alt="AFRIMMA Musicfest volunteer team, Dallas"></div>
-      <div class="gallery-item"><img src="assets/photos/basketmouth-2026-flyer.jpg" alt="Basketmouth: Moral of the Story, The Icon Richardson, April 2026"></div>
-    </div>
-    <div class="reel-stack">
-      <a class="video-card" href="https://www.instagram.com/reel/DTikCYVEf4p/" target="_blank" rel="noopener">
-        <img src="assets/photos/africa-supplies-2.jpg" alt="Watch: Christmas in Ogberuru, Nigeria">
-        <div class="play"><svg viewBox="0 0 24 24" fill="var(--orange-deep)"><path d="M8 5v14l11-7z"/></svg></div>
-        <div class="caption">
-          <div class="tag">Nigeria</div>
-          <div class="title">Christmas in Ogberuru</div>
-          <div class="sub">Gifts, food &amp; music for the kids</div>
-        </div>
-      </a>
-      <a class="video-card" href="https://www.instagram.com/reel/CmIYf74AUHC/" target="_blank" rel="noopener">
-        <img src="assets/photos/video-dfw-2022.jpg" alt="Watch: Big A Foundation Christmas party, 2022">
-        <div class="play"><svg viewBox="0 0 24 24" fill="var(--teal-deep)"><path d="M8 5v14l11-7z"/></svg></div>
-        <div class="caption">
-          <div class="tag">DFW · 2022</div>
-          <div class="title">Thanks to the parents</div>
-          <div class="sub">A look back at the Christmas party</div>
-        </div>
-      </a>
-    </div>
+  <div class="highlights-grid" data-reveal>
+    <a class="video-card square" href="https://www.instagram.com/reel/DTikCYVEf4p/" target="_blank" rel="noopener">
+      <img src="assets/photos/africa-supplies-2.jpg" alt="Watch: Christmas in Ogberuru, Nigeria">
+      <div class="play"><svg viewBox="0 0 24 24" fill="var(--orange-deep)"><path d="M8 5v14l11-7z"/></svg></div>
+      <div class="caption">
+        <div class="tag">Nigeria</div>
+        <div class="title">Christmas in Ogberuru</div>
+        <div class="sub">Gifts, food &amp; music for the kids</div>
+      </div>
+    </a>
+    <a class="video-card square" href="https://www.instagram.com/reel/CmIYf74AUHC/" target="_blank" rel="noopener">
+      <img src="assets/photos/video-dfw-2022.jpg" alt="Watch: Big A Foundation Christmas party, 2022">
+      <div class="play"><svg viewBox="0 0 24 24" fill="var(--teal-deep)"><path d="M8 5v14l11-7z"/></svg></div>
+      <div class="caption">
+        <div class="tag">DFW · 2022</div>
+        <div class="title">Thanks to the parents</div>
+        <div class="sub">A look back at the Christmas party</div>
+      </div>
+    </a>
+    <div class="gallery-item"><img src="assets/photos/gallery-1.jpg" alt="Child with Santa, Big A Foundation Christmas party"></div>
+    <div class="gallery-item"><img src="assets/photos/gallery-2.jpg" alt="Big A Foundation Christmas party"></div>
+    <div class="gallery-item"><img src="assets/photos/gallery-3.jpg" alt="Kids at the Big A Foundation Christmas party"></div>
+    <div class="gallery-item"><img src="assets/photos/gallery-4.jpg" alt="Big A Foundation volunteers"></div>
+    <div class="gallery-item"><img src="assets/photos/gallery-5.jpg" alt="Basketmouth Live in Dallas, Hyenas Comedy Club, 2025"></div>
+    <div class="gallery-item"><img src="assets/photos/afrimma-crowd.jpg" alt="AFRIMMA Musicfest crowd, Dallas"></div>
+    <div class="gallery-item"><img src="assets/photos/afrimma-award.jpg" alt="AFRIMMA award winner, Dallas"></div>
+    <div class="gallery-item"><img src="assets/photos/afrimma-volunteers.jpg" alt="AFRIMMA Musicfest volunteer team, Dallas"></div>
+    <div class="gallery-item"><img src="assets/photos/basketmouth-2026-flyer.jpg" alt="Basketmouth: Moral of the Story, The Icon Richardson, April 2026"></div>
   </div>
 </section>
 
@@ -680,22 +677,27 @@ footer{ background:var(--ink); color:var(--ondark-muted); padding:72px 0 40px; }
     <div class="eyebrow">GET INVOLVED</div>
     <h2 style="font-size:clamp(36px,5vw,64px)">Volunteer with us.</h2>
   </div>
-  <div class="volunteer-card" data-reveal data-delay="100">
-    <div id="vol-form">
-      <div class="form-row"><label for="vol-name">Name</label><input id="vol-name" type="text" placeholder="Your full name"></div>
-      <div class="form-row"><label for="vol-email">Email</label><input id="vol-email" type="email" placeholder="you@email.com"></div>
-      <div class="field-label">Interests</div>
-      <div class="chip-row" id="interest-row">
-        <button type="button" class="chip" data-interest="Events">Events</button>
-        <button type="button" class="chip" data-interest="Mentoring">Mentoring</button>
-        <button type="button" class="chip" data-interest="Resource drives">Resource drives</button>
-        <button type="button" class="chip" data-interest="School building">School building</button>
-        <button type="button" class="chip" data-interest="Arts & culture">Arts &amp; culture</button>
-        <button type="button" class="chip" data-interest="Fundraising">Fundraising</button>
+  <div class="volunteer-grid">
+    <div class="volunteer-card" data-reveal data-delay="100">
+      <div id="vol-form">
+        <div class="form-row"><label for="vol-name">Name</label><input id="vol-name" type="text" placeholder="Your full name"></div>
+        <div class="form-row"><label for="vol-email">Email</label><input id="vol-email" type="email" placeholder="you@email.com"></div>
+        <div class="field-label">Interests</div>
+        <div class="chip-row" id="interest-row">
+          <button type="button" class="chip" data-interest="Events">Events</button>
+          <button type="button" class="chip" data-interest="Mentoring">Mentoring</button>
+          <button type="button" class="chip" data-interest="Resource drives">Resource drives</button>
+          <button type="button" class="chip" data-interest="School building">School building</button>
+          <button type="button" class="chip" data-interest="Arts & culture">Arts &amp; culture</button>
+          <button type="button" class="chip" data-interest="Fundraising">Fundraising</button>
+        </div>
+        <button class="btn btn-dark give-btn" id="vol-submit" type="button">Submit interest →</button>
       </div>
-      <button class="btn btn-dark give-btn" id="vol-submit" type="button">Submit interest →</button>
+      <div class="success-box" id="vol-success" style="display:none;">Thanks for stepping up! We'll be in touch soon. (Placeholder — wire this form to a real backend, CRM or email before launch.)</div>
     </div>
-    <div class="success-box" id="vol-success" style="display:none;">Thanks for stepping up! We'll be in touch soon. (Placeholder — wire this form to a real backend, CRM or email before launch.)</div>
+    <div class="volunteer-logo-feature" data-reveal data-delay="150">
+      <img src="assets/big-a-logo.jpeg" alt="Big A Foundation">
+    </div>
   </div>
 </section>
 
