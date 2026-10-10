@@ -181,6 +181,9 @@ header{
 .card-tag{ font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; font-weight:500; }
 .card h3{ font-size:22px; margin-top:10px; font-weight:700; }
 .card p{ margin-top:10px; color:var(--muted2); font-size:15px; }
+.program-list{ list-style:none; margin:16px 0 0; padding-top:14px; border-top:1px solid var(--input-border); display:flex; flex-direction:column; gap:8px; }
+.program-list li{ font-size:14px; color:var(--muted2); padding-left:18px; position:relative; }
+.program-list li::before{ content:''; position:absolute; left:0; top:7px; width:6px; height:6px; border-radius:50%; background:var(--teal); }
 
 /* ===== schools ===== */
 .schools{ background:var(--cream-alt); padding:var(--sec) 0; }
@@ -429,6 +432,11 @@ footer{ background:var(--ink); color:var(--ondark-muted); padding:72px 0 40px; }
         <div class="card-tag" style="color:var(--teal-deep)">DFW</div>
         <h3>Community Programs</h3>
         <p>Mentoring, workshops and youth programs that build confidence and connection across DFW.</p>
+        <ul class="program-list">
+          <li>Youth mentoring &amp; workshops</li>
+          <li>The annual Children's Christmas Party</li>
+          <li>Community days &amp; seasonal events</li>
+        </ul>
       </div>
     </div>
     <div class="card" data-reveal data-delay="60">
@@ -437,6 +445,11 @@ footer{ background:var(--ink); color:var(--ondark-muted); padding:72px 0 40px; }
         <div class="card-tag" style="color:var(--red-deep)">DFW</div>
         <h3>Family Resources</h3>
         <p>Food, school supplies and essentials, delivered with dignity to families who need a lift.</p>
+        <ul class="program-list">
+          <li>Food &amp; resource drives</li>
+          <li>School supply &amp; gift distribution</li>
+          <li>Emergency family assistance</li>
+        </ul>
       </div>
     </div>
     <div class="card" data-reveal data-delay="120">
@@ -445,6 +458,11 @@ footer{ background:var(--ink); color:var(--ondark-muted); padding:72px 0 40px; }
         <div class="card-tag" style="color:var(--orange-deep)">NIGERIA + AFRICA</div>
         <h3>Schools Across Africa</h3>
         <p>Building schools across Nigeria and Africa, starting with our first in Owerri.</p>
+        <ul class="program-list">
+          <li>School 01 under construction, Owerri</li>
+          <li>Classroom supplies &amp; materials drives</li>
+          <li>Planning for more of Nigeria, then Africa</li>
+        </ul>
       </div>
     </div>
     <div class="card" data-reveal data-delay="60">
@@ -453,6 +471,11 @@ footer{ background:var(--ink); color:var(--ondark-muted); padding:72px 0 40px; }
         <div class="card-tag" style="color:var(--red-deep)">AFRICA</div>
         <h3>Arts &amp; Culture</h3>
         <p>Backing artists, performers and cultural spaces that celebrate African heritage.</p>
+        <ul class="program-list">
+          <li>AFRIMMA Musicfest support</li>
+          <li>Comedy Across the Continent</li>
+          <li>Platforming African artists &amp; performers</li>
+        </ul>
       </div>
     </div>
   </div>
