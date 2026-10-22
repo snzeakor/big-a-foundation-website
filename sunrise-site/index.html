@@ -222,6 +222,27 @@ header{
 .leadership-stats .n{ font-family:var(--display); font-weight:800; font-size:28px; color:var(--red-deep); }
 .leadership-stats .l{ font-size:13px; color:var(--muted); margin-top:2px; max-width:140px; }
 
+/* ===== founders ===== */
+.founders-heading{ font-size:clamp(26px,3.4vw,38px); margin-top:14px; font-weight:800; letter-spacing:-0.01em; }
+.founders-photo-banner{ margin-top:28px; border-radius:28px; overflow:hidden; aspect-ratio:21/9; box-shadow:0 30px 60px -30px rgba(22,20,18,.35); }
+.founders-photo-banner img{ width:100%; height:100%; object-fit:cover; }
+@media (max-width:700px){ .founders-photo-banner{ aspect-ratio:4/3; } }
+.founder-bios{ display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-top:48px; align-items:start; }
+@media (max-width:860px){ .founder-bios{ grid-template-columns:1fr; } }
+.founder-bio-card{ background:#fff; border-radius:28px; padding:40px; box-shadow:0 20px 50px -35px rgba(22,20,18,.25); border-top:4px solid var(--teal); }
+.founder-bio-card.red{ border-top-color:var(--red); }
+.founder-avatar{ width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:var(--display); font-weight:800; font-size:19px; color:#fff; margin-bottom:18px; }
+.founder-avatar.teal{ background:var(--teal); }
+.founder-avatar.red{ background:var(--red); }
+.founder-bio-card h4{ font-family:var(--display); font-weight:800; font-size:clamp(20px,2.4vw,24px); letter-spacing:-0.01em; }
+.founder-credentials{ font-family:var(--mono); font-size:12px; letter-spacing:.04em; color:var(--muted); margin-top:6px; }
+.founder-titles{ display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+.founder-tag{ font-family:var(--mono); font-size:10px; letter-spacing:.05em; text-transform:uppercase; font-weight:600; padding:6px 11px; border-radius:999px; background:var(--cream-alt); color:var(--muted2); }
+.founder-bio-card.teal .founder-tag{ background:var(--teal-tint2); color:var(--teal-deep); }
+.founder-bio-card.red .founder-tag{ background:var(--red-tint2); color:var(--red-deep); }
+.founder-bio-text{ margin-top:22px; padding-top:22px; border-top:1px solid var(--input-border); display:flex; flex-direction:column; gap:14px; }
+.founder-bio-text p{ color:var(--muted2); font-size:15px; line-height:1.7; }
+
 /* ===== programs ===== */
 .section{ padding:var(--sec) 0; }
 .section-head{ max-width:640px; margin-bottom:56px; }
@@ -559,19 +580,59 @@ footer{ background:var(--ink); color:var(--ondark-muted); padding:72px 0 40px; }
     </div>
   </div>
 
-  <div class="leadership-card" data-reveal data-delay="100">
-    <div class="leadership-photo">
-      <img src="assets/photos/founders.jpg" alt="Mr. and Mrs. Obiagwu, founders of Big A Foundation, at the Children's Christmas Party">
+  <div class="founders-section" data-reveal data-delay="100">
+    <img src="assets/big-a-logo.jpeg" alt="Big A Foundation" class="leadership-logo">
+    <div class="eyebrow" style="color:var(--red-deep)">LED BY PEOPLE WHO SHOW UP</div>
+    <h3 class="founders-heading">Meet our founders.</h3>
+
+    <div class="founders-photo-banner">
+      <img src="assets/photos/founders.jpg" alt="Anderson and Nwayabuife Obiagwu, founders of Big A Foundation, at the Children's Christmas Party">
     </div>
-    <div>
-      <img src="assets/big-a-logo.jpeg" alt="Big A Foundation" class="leadership-logo">
-      <div class="eyebrow" style="color:var(--red-deep)">LED BY PEOPLE WHO SHOW UP</div>
-      <h3 style="font-size:clamp(24px,3vw,32px); margin-top:10px; font-weight:800;">Mr. &amp; Mrs. Obiagwu, our founders.</h3>
-      <p style="margin-top:12px; color:var(--muted2); font-size:16px; max-width:480px;">From Dallas to Orlu, Mr. and Mrs. Obiagwu show up in person — at every Christmas party, every supply drop, every school visit.</p>
-      <div class="leadership-stats">
-        <div><div class="n">15</div><div class="l">Years of the Christmas Party</div></div>
-        <div><div class="n">2</div><div class="l">Continents, one mission</div></div>
-      </div>
+
+    <div class="leadership-stats" style="margin-top:32px; padding-top:0; border-top:none;">
+      <div><div class="n">15</div><div class="l">Years of the Christmas Party</div></div>
+      <div><div class="n">2</div><div class="l">Continents, one mission</div></div>
+    </div>
+
+    <div class="founder-bios">
+      <article class="founder-bio-card teal">
+        <div class="founder-avatar teal">IO</div>
+        <h4>Nwayabuife &ldquo;Ifeoma&rdquo; Obiagwu</h4>
+        <div class="founder-credentials">MSN, APRN, PMHNP-BC</div>
+        <div class="founder-titles">
+          <span class="founder-tag">Entrepreneur</span>
+          <span class="founder-tag">Healthcare Professional</span>
+          <span class="founder-tag">Philanthropist</span>
+          <span class="founder-tag">Community Leader</span>
+        </div>
+        <div class="founder-bio-text">
+          <p>Nwayabuife &ldquo;Ifeoma&rdquo; Obiagwu is an accomplished entrepreneur, board-certified Psychiatric Mental Health Nurse Practitioner, philanthropist, and community leader with a passion for empowering individuals, strengthening families, and creating meaningful opportunities for underserved communities.</p>
+          <p>With nearly two decades of nursing experience, Ifeoma has dedicated her healthcare career to compassionate, patient-centered care, particularly in mental health. Her professional journey reflects a commitment to improving access to quality healthcare, promoting mental wellness, and advocating for vulnerable populations.</p>
+          <p>Beyond healthcare, Ifeoma is an entrepreneur with extensive experience spanning healthcare services, hospitality, and entertainment. Her diverse leadership roles reflect her dedication to mentorship, economic empowerment, and community development.</p>
+          <p>A passionate advocate for giving back, Ifeoma has spent more than a decade organizing and supporting charitable initiatives, including annual Christmas and Easter celebrations for children and families. She is actively involved in community organizations and initiatives that promote education, cultural heritage, family unity, and opportunities for future generations.</p>
+          <p>As a wife, mother, and woman of faith, Ifeoma believes that true success is measured not only by personal achievements but by the lives we touch and the positive impact we leave behind. Guided by her faith in God, she remains committed to serving others with compassion, integrity, and purpose.</p>
+          <p>Through the Big A Foundation, Ifeoma is dedicated to uplifting communities, empowering the next generation, and creating a lasting legacy of hope, service, and opportunity.</p>
+        </div>
+      </article>
+
+      <article class="founder-bio-card red">
+        <div class="founder-avatar red">AO</div>
+        <h4>Anderson Obiagwu</h4>
+        <div class="founder-credentials">Founder, Big A Foundation</div>
+        <div class="founder-titles">
+          <span class="founder-tag">Entertainment Executive</span>
+          <span class="founder-tag">Entrepreneur</span>
+          <span class="founder-tag">Philanthropist</span>
+          <span class="founder-tag">Cultural Ambassador</span>
+        </div>
+        <div class="founder-bio-text">
+          <p>Anderson Obiagwu is a renowned entertainment executive, entrepreneur, and philanthropist with over 20 years of experience promoting African music and culture globally. He is the Founder and CEO of Big A Entertainment, the visionary behind the African Muzik Magazine Awards (AFRIMMA) and AFRIMMA Music Fest, and the Founder of Big A Foundation.</p>
+          <p>A pioneer in promoting African entertainment in the United States, Obiagwu has helped bridge the gap between Africa and the global entertainment industry through concerts, festivals, and cultural initiatives.</p>
+          <p>He is also the owner of The Icon Restaurant &amp; Lounge in Richardson, Texas.</p>
+          <p>Beyond entertainment, his passion for education and community development led to the construction and donation of Ascension Secondary School in Ogberuru, Nigeria, in honor of his late parents.</p>
+          <p>Through entertainment, entrepreneurship, and philanthropy, Anderson Obiagwu continues to elevate African culture, empower communities, and inspire future generations.</p>
+        </div>
+      </article>
     </div>
   </div>
   <div class="leadership-card" data-reveal data-delay="100" style="margin-top:48px;">
