@@ -231,10 +231,9 @@ header{
 @media (max-width:860px){ .founder-bios{ grid-template-columns:1fr; } }
 .founder-bio-card{ background:#fff; border-radius:28px; padding:40px; box-shadow:0 20px 50px -35px rgba(22,20,18,.25); border-top:4px solid var(--teal); }
 .founder-bio-card.red{ border-top-color:var(--red); }
-.founder-avatar{ width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:var(--display); font-weight:800; font-size:19px; color:#fff; margin-bottom:18px; }
-.founder-avatar.teal{ background:var(--teal); }
-.founder-avatar.red{ background:var(--red); }
-.founder-bio-card h4{ font-family:var(--display); font-weight:800; font-size:clamp(20px,2.4vw,24px); letter-spacing:-0.01em; }
+.founder-bio-card h4{ font-family:var(--display); font-weight:800; font-size:clamp(28px,3.4vw,36px); letter-spacing:-0.02em; line-height:1.08; }
+.founder-bio-card.teal h4{ color:var(--teal-deep); }
+.founder-bio-card.red h4{ color:var(--red-deep); }
 .founder-credentials{ font-family:var(--mono); font-size:12px; letter-spacing:.04em; color:var(--muted); margin-top:6px; }
 .founder-titles{ display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
 .founder-tag{ font-family:var(--mono); font-size:10px; letter-spacing:.05em; text-transform:uppercase; font-weight:600; padding:6px 11px; border-radius:999px; background:var(--cream-alt); color:var(--muted2); }
@@ -596,7 +595,6 @@ footer{ background:var(--ink); color:var(--ondark-muted); padding:72px 0 40px; }
 
     <div class="founder-bios">
       <article class="founder-bio-card teal">
-        <div class="founder-avatar teal">IO</div>
         <h4>Nwayabuife &ldquo;Ifeoma&rdquo; Obiagwu</h4>
         <div class="founder-credentials">MSN, APRN, PMHNP-BC</div>
         <div class="founder-titles">
@@ -616,7 +614,6 @@ footer{ background:var(--ink); color:var(--ondark-muted); padding:72px 0 40px; }
       </article>
 
       <article class="founder-bio-card red">
-        <div class="founder-avatar red">AO</div>
         <h4>Anderson Obiagwu</h4>
         <div class="founder-credentials">Founder, Big A Foundation</div>
         <div class="founder-titles">
